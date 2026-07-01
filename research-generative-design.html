@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="生成式设计研究 — 贺丹晖 MSc Dissertation · Generative Design for Early-Stage Massing Optimization" />
+  <title>生成式设计研究 · Generative Design · 贺丹晖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/research.css" />
+  <link rel="stylesheet" href="css/layout-overrides.css?v=1" />
+  <link rel="stylesheet" href="css/page-edit.css?v=3" />
+  <link rel="stylesheet" href="css/page-layout.css?v=1" />
+</head>
+<body data-lang="zh">
+
+  <div class="lang-switcher">
+    <button type="button" class="lang-switcher-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+      <span class="lang-switcher-current">中文</span>
+      <span class="lang-switcher-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="lang-switcher-menu" role="listbox" hidden>
+      <li role="presentation"><button type="button" role="option" data-lang="zh" aria-selected="true">中文</button></li>
+      <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
+    </ul>
+  </div>
+
+  <div class="research-page">
+
+    <header class="research-topbar">
+      <a class="research-back" href="index.html" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
+      <span class="research-page-sub">MSc Modern Building Design · University of Bath · 2021</span>
+    </header>
+
+    <h1 class="research-page-title" data-zh="研究成果 · 生成式设计" data-en="Research · Generative Design">研究成果 · 生成式设计</h1>
+
+    <p class="research-lead zh-only">
+      硕士论文与 <strong>Galliard Homes</strong> 产业实习成果：验证 <strong>Dynamo + Refinery（NSGA-II）</strong> 能否在概念设计阶段自动探索并多目标优化住宅体量方案，并与 Kreo / TestFit 等商用 Building Configurator 对比。
+    </p>
+    <p class="research-lead en-only">
+      MSc dissertation &amp; <strong>Galliard Homes</strong> placement: examining <strong>Dynamo + Refinery (NSGA-II)</strong> for automated multi-objective residential massing optimization at concept stage, compared against Kreo / TestFit building configurators.
+    </p>
+
+    <div class="research-meta-row">
+      <span><strong data-zh="案例" data-en="Case">案例</strong> Wimbledon Stadium Residential, London</span>
+      <span><strong data-zh="平台" data-en="Platform">平台</strong> Dynamo · Refinery · Revit · Ladybug</span>
+      <span><strong data-zh="时间" data-en="Date">时间</strong> 2020.12 Presentation · 2021.01 Thesis</span>
+    </div>
+
+    <p class="research-doc-link">
+      <a href="assets/dissertation-generative-design.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="zh-only">📄 阅读完整论文正文（PDF · University of Bath · Distinction）</span>
+        <span class="en-only">📄 Read full dissertation (PDF · University of Bath · Distinction)</span>
+      </a>
+    </p>
+
+    <p class="research-version-link">
+      <a href="research-generative-design-brief.html" data-zh="📖 故事版（零基础可读）→" data-en="📖 Story version (plain language) →">📖 故事版（零基础可读）→</a>
+    </p>
+
+    <div class="research-thesis zh-only">
+      <strong>核心命题：</strong>能否用编程式生成式设计，替代传统「手绘草图 → 少量方案 → 事后性能分析」的低效迭代，为开发商早期方案决策提供量化证据？
+    </div>
+    <div class="research-thesis en-only">
+      <strong>Core question:</strong> Can programming-based generative design replace the inefficient loop of sketching → few options → post-hoc simulation, providing evidence-based early-stage decisions?
+    </div>
+
+    <div class="research-grid">
+
+      <div class="research-card research-span-2">
+        <h3><span class="num">01</span> <span data-zh="研究背景" data-en="Background">研究背景</span></h3>
+        <ul class="zh-only">
+          <li><strong>性能导向不足</strong> — 可持续与收益指标往往在深化阶段才被动满足</li>
+          <li><strong>早期迭代效率低</strong> — 反复改模占用大量非增值时间</li>
+          <li><strong>多目标决策缺证据</strong> — 密度、日照、热工等目标相互冲突</li>
+        </ul>
+        <ul class="en-only">
+          <li><strong>Weak performance focus</strong> — sustainability &amp; profit metrics addressed too late</li>
+          <li><strong>Low early-stage automation</strong> — repetitive remodelling is non-value-added</li>
+          <li><strong>Multi-objective gaps</strong> — density, daylight &amp; thermal goals conflict without data</li>
+        </ul>
+      </div>
+
+      <div class="research-card research-span-2">
+        <h3><span class="num">02</span> <span data-zh="案例实践 · Wimbledon Block 1" data-en="Case Study · Wimbledon Block 1">案例实践 · Wimbledon Block 1</span></h3>
+        <div class="research-workflow">
+          <div class="research-wf-step">
+            <div class="research-wf-icon">IN</div>
+            <div class="research-wf-label" data-zh="输入定义" data-en="Inputs">输入定义</div>
+            <div class="research-wf-sub" data-zh="变量·约束·目标" data-en="Vars·Rules·Goals">变量·约束·目标</div>
+          </div>
+          <div class="research-wf-step">
+            <div class="research-wf-icon">PM</div>
+            <div class="research-wf-label" data-zh="参数化建模" data-en="Parametric">参数化建模</div>
+            <div class="research-wf-sub">Dynamo</div>
+          </div>
+          <div class="research-wf-step">
+            <div class="research-wf-icon">EV</div>
+            <div class="research-wf-label" data-zh="五维评估" data-en="5 Metrics">五维评估</div>
+            <div class="research-wf-sub">Ladybug</div>
+          </div>
+          <div class="research-wf-step">
+            <div class="research-wf-icon">GD</div>
+            <div class="research-wf-label">Refinery</div>
+            <div class="research-wf-sub">Optimize</div>
+          </div>
+          <div class="research-wf-step">
+            <div class="research-wf-icon">OUT</div>
+            <div class="research-wf-label" data-zh="成果输出" data-en="Output">成果输出</div>
+            <div class="research-wf-sub" data-zh="雷达图·Revit" data-en="Radar·Revit">雷达图·Revit</div>
+          </div>
+        </div>
+        <figure class="research-highlight research-highlight--wide">
+          <img src="assets/research/dynamo-script.png" alt="Dynamo generative design script overview" loading="lazy" />
+          <figcaption class="zh-only">Dynamo 脚本总览 — 参数化建模（绿）· 五维评估（粉）· Revit 输出（蓝）</figcaption>
+          <figcaption class="en-only">Dynamo script overview — parametric modelling · evaluation · Revit output</figcaption>
+        </figure>
+        <div class="research-goals-wrap">
+          <div>
+            <p class="research-subhead" data-zh="三大设计变量" data-en="3 Design Variables">三大设计变量</p>
+            <ul class="research-goal-list zh-only">
+              <li><span class="g-num">W</span> 建筑宽度 10–25 m（朝向差异化）</li>
+              <li><span class="g-num">H</span> 建筑高度 5–10 层</li>
+              <li><span class="g-num">C</span> 庭院数量 3–5 个</li>
+            </ul>
+            <ul class="research-goal-list en-only">
+              <li><span class="g-num">W</span> Building width 10–25 m (orientation-based)</li>
+              <li><span class="g-num">H</span> Building height 5–10 storeys</li>
+              <li><span class="g-num">C</span> Courtyard count 3–5</li>
+            </ul>
+            <p class="research-subhead" data-zh="五大多目标指标" data-en="5 Optimization Goals">五大多目标指标</p>
+            <ul class="research-goal-list zh-only">
+              <li><span class="g-num">1</span> 最小化 SVR（表面积体积比 → 热工性能）</li>
+              <li><span class="g-num">2</span> 最大化屋顶有效太阳能采集面积</li>
+              <li><span class="g-num">3</span> 最大化建筑间距（≥21 m）</li>
+              <li><span class="g-num">4</span> 最大化开放空间比</li>
+              <li><span class="g-num">5</span> 最大化庭院日照时数（BRE 2h 标准）</li>
+            </ul>
+            <ul class="research-goal-list en-only">
+              <li><span class="g-num">1</span> Minimize SVR (surface-to-volume ratio → thermal)</li>
+              <li><span class="g-num">2</span> Maximize effective solar collection area</li>
+              <li><span class="g-num">3</span> Maximize building separation (≥21 m)</li>
+              <li><span class="g-num">4</span> Maximize open space ratio</li>
+              <li><span class="g-num">5</span> Maximize courtyard sunlight hours (BRE 2h)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="research-highlights">
+          <figure class="research-highlight">
+            <img src="assets/research/courtyard-evaluation.gif" alt="Five-metric evaluation — courtyard sunlight heatmap and radar chart" loading="lazy" />
+            <figcaption class="zh-only">五维评估演示 — 庭院日照热力图与雷达图联动</figcaption>
+            <figcaption class="en-only">5-metric evaluation demo — courtyard sunlight heatmap &amp; radar chart</figcaption>
+          </figure>
+          <figure class="research-highlight">
+            <img src="assets/research/refinery-dashboard.png" alt="Refinery generative design results with parallel coordinates" loading="lazy" />
+            <figcaption class="zh-only">Refinery 优化输出 — 方案矩阵 · 平行坐标筛选 · 性能指标</figcaption>
+            <figcaption class="en-only">Refinery output — option grid · parallel coords · performance metrics</figcaption>
+          </figure>
+        </div>
+        <div class="research-metrics">
+          <div class="research-metric">
+            <div class="research-metric-val">52,043 m²</div>
+            <div class="research-metric-lbl" data-zh="优选方案 GFA" data-en="Selected GFA">优选方案 GFA</div>
+          </div>
+          <div class="research-metric">
+            <div class="research-metric-val">6,365 m²</div>
+            <div class="research-metric-lbl" data-zh="建筑覆盖率" data-en="Building Coverage">建筑覆盖率</div>
+          </div>
+          <div class="research-metric">
+            <div class="research-metric-val">&gt;1000</div>
+            <div class="research-metric-lbl" data-zh="自动生成方案" data-en="Auto-generated Options">自动生成方案</div>
+          </div>
+          <div class="research-metric">
+            <div class="research-metric-val">~15 min</div>
+            <div class="research-metric-lbl" data-zh="单次优化运算" data-en="Per Optimization Run">单次优化运算</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-card research-span-2">
+        <h3><span class="num">03</span> <span data-zh="多路径对比" data-en="Multi-Approach Comparison">多路径对比</span></h3>
+        <p class="research-compare-lead zh-only">
+          论文第 5 章从开发商视角，对<strong>传统概念设计</strong>、<strong>Dynamo 编程式 GD</strong>与<strong>Building Configurator（Kreo / TestFit）</strong>三种早期规划路径做了并列评估。以下客观列出各路径的优势与局限，不作单一推荐。
+        </p>
+        <p class="research-compare-lead en-only">
+          Thesis Ch.5 compares three early-planning paths from a developer's view: <strong>conventional design</strong>, <strong>Dynamo programming-based GD</strong>, and <strong>Building Configurators (Kreo / TestFit)</strong>. Pros and cons below are presented objectively — no single winner.
+        </p>
+
+        <div class="research-paths">
+
+          <div class="research-path-card">
+            <h4 data-zh="路径 A · 传统概念设计" data-en="Path A · Conventional Design">路径 A · 传统概念设计</h4>
+            <p class="research-path-desc zh-only">手绘草图 / 物理模型 + 建筑师经验迭代，RIBA Stage 2 常规流程。</p>
+            <p class="research-path-desc en-only">Sketch / physical model + architect-led iteration — standard RIBA Stage 2 workflow.</p>
+            <div class="research-path-pros">
+              <strong class="zh-only">优势</strong><strong class="en-only">Pros</strong>
+              <ul class="zh-only">
+                <li>能处理街景、规划语境、客户审美等<strong>非量化设计意图</strong></li>
+                <li>对异形地块、复杂边界适应性强，不依赖固定算法规则</li>
+                <li>只需传统建筑技能，无需编程或额外软件订阅</li>
+                <li>多专业协作成熟，适用于各类项目类型</li>
+              </ul>
+              <ul class="en-only">
+                <li>Handles <strong>non-quantifiable intent</strong> — streetscape, planning context, client taste</li>
+                <li>Strong on irregular sites; not bound to fixed algorithmic rules</li>
+                <li>Traditional architectural skills only — no coding or extra subscriptions</li>
+                <li>Mature multidisciplinary collaboration; applicable to all project types</li>
+              </ul>
+            </div>
+            <div class="research-path-cons">
+              <strong class="zh-only">局限</strong><strong class="en-only">Cons</strong>
+              <ul class="zh-only">
+                <li>方案探索有限（通常 &lt;5 个），难以穷尽多目标最优解</li>
+                <li>迭代以「可接受」为终点，而非量化意义上的最优</li>
+                <li>反复改模耗时长（常见 4–6 周至数月），非增值劳动占比高</li>
+                <li>协作依赖会议与文件往来，信息同步效率低</li>
+                <li>性能评估往往在方案成型后才介入，偏被动</li>
+              </ul>
+              <ul class="en-only">
+                <li>Limited exploration (&lt;5 options typically); hard to exhaust multi-objective optima</li>
+                <li>Iteration stops at "acceptable" — not quantitatively optimal</li>
+                <li>Repetitive remodelling takes weeks to months — high non-value-added effort</li>
+                <li>Collaboration relies on meetings &amp; file exchange — slow sync</li>
+                <li>Performance evaluation often post-hoc, after form is set</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="research-path-card">
+            <h4>Dynamo + Refinery</h4>
+            <p class="research-path-desc zh-only">编程式生成式设计 — 自研 Dynamo 脚本 + Refinery（NSGA-II）多目标优化。</p>
+            <p class="research-path-desc en-only">Programming-based GD — custom Dynamo script + Refinery (NSGA-II) multi-objective optimization.</p>
+            <div class="research-path-pros">
+              <strong class="zh-only">优势</strong><strong class="en-only">Pros</strong>
+              <ul class="zh-only">
+                <li>变量、约束、评估规则<strong>完全由设计师定义</strong>，项目专属</li>
+                <li>NSGA-II 可同时优化 5+ 项冲突目标，输出 Pareto 最优集</li>
+                <li>方案可直接输出 Revit 模型，变更场景无需重复建模</li>
+                <li>可持续扩展更多性能评估指标（热工、日照、间距等）</li>
+                <li>平台边际成本低（Revit 已有即可）；脚本就绪后单次运行约 15 分钟</li>
+              </ul>
+              <ul class="en-only">
+                <li>Variables, constraints &amp; metrics <strong>fully designer-defined</strong> — project-specific</li>
+                <li>NSGA-II optimizes 5+ conflicting goals; outputs Pareto-optimal sets</li>
+                <li>Direct Revit output — no redundant remodelling across scenarios</li>
+                <li>Extensible to more performance metrics (thermal, daylight, separation…)</li>
+                <li>Low marginal platform cost; ~15 min per run once script is ready</li>
+              </ul>
+            </div>
+            <div class="research-path-cons">
+              <strong class="zh-only">局限</strong><strong class="en-only">Cons</strong>
+              <ul class="zh-only">
+                <li>仅适用于边界清晰、可参数化的<strong>特定问题</strong>，泛化能力弱</li>
+                <li>需建筑 + 编程复合能力；前期编码约 2 个月（含学习）</li>
+                <li>将设计意图翻译为代码耗时，需求变更成本高</li>
+                <li>计算性能受硬件与软件版本制约</li>
+                <li>非量化设计意图（街景一致性等）仍须人工后处理</li>
+              </ul>
+              <ul class="en-only">
+                <li>Only fits <strong>well-scoped, parametric problems</strong> — weak generalization</li>
+                <li>Requires architecture + programming skills; ~2 months upfront (incl. learning)</li>
+                <li>Translating design intent to code is time-consuming; change is costly</li>
+                <li>Compute bounded by hardware &amp; software versions</li>
+                <li>Non-quantifiable intent (streetscape etc.) still needs manual refinement</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="research-path-card">
+            <h4>Kreo / TestFit</h4>
+            <p class="research-path-desc zh-only">商用 Building Configurator — 内置算法 + 模块化单元体系的快速可研工具。</p>
+            <p class="research-path-desc en-only">Commercial Building Configurator — built-in algorithms + modular unit system for rapid feasibility.</p>
+            <div class="research-path-pros">
+              <strong class="zh-only">优势</strong><strong class="en-only">Pros</strong>
+              <ul class="zh-only">
+                <li>上手快、培训成本低；开发商可自行操作</li>
+                <li>体量 + 户内布局 + 成本分析<strong>一体化自动化</strong>，数小时出方案</li>
+                <li>界面友好，支持手动拖拽微调体量与单元</li>
+                <li>内置量化、可视化与可研报告，Presentation 效率高</li>
+                <li>数据集中在一个平台，利于多方协作</li>
+                <li>产品成熟度高于设计师自研脚本</li>
+              </ul>
+              <ul class="en-only">
+                <li>Low training barrier; developers can operate directly</li>
+                <li><strong>Integrated automation</strong> — massing + unit layout + cost in hours</li>
+                <li>User-friendly UI; manual drag-and-adjust of mass &amp; units</li>
+                <li>Built-in quantification, visualization &amp; feasibility reports</li>
+                <li>Single platform for data — easier stakeholder collaboration</li>
+                <li>More mature product than designer-built scripts</li>
+              </ul>
+            </div>
+            <div class="research-path-cons">
+              <strong class="zh-only">局限</strong><strong class="en-only">Cons</strong>
+              <ul class="zh-only">
+                <li>依赖<strong>模块化单元体系</strong>，非模块化项目价值有限</li>
+                <li>内置 GD 主要优化 2 项（体量最大化 + 日照约束），多目标能力弱</li>
+                <li>算法不公开，用户无法查看或修改底层规则</li>
+                <li>对异形地块、场地边界与建筑语境 respect 能力弱</li>
+                <li>订阅费高（≥£1000/月）；计算同样受软硬件性能限制</li>
+              </ul>
+              <ul class="en-only">
+                <li>Relies on <strong>modular unit systems</strong> — limited value otherwise</li>
+                <li>Built-in GD mainly optimizes 2 goals (volume + daylight) — weak multi-objective</li>
+                <li>Algorithms not transparent — users can't inspect or modify rules</li>
+                <li>Weak on irregular sites, boundaries &amp; architectural context</li>
+                <li>High subscription (≥£1000/mo); compute still hardware-bound</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <table class="research-compare research-compare--summary">
+          <caption class="zh-only">三路径横向速览（论文 Table 5.3 提炼）</caption>
+          <caption class="en-only">At-a-glance summary (from Thesis Table 5.3)</caption>
+          <thead>
+            <tr>
+              <th data-zh="维度" data-en="Dimension">维度</th>
+              <th data-zh="传统设计" data-en="Conventional">传统设计</th>
+              <th>Dynamo GD</th>
+              <th>Configurator</th>
+            </tr>
+          </thead>
+          <tbody class="zh-only">
+            <tr><td>成本</td><td>建筑师费用</td><td>建筑师/专员 + 编程培训；平台成本低</td><td>≥£1000/月 订阅</td></tr>
+            <tr><td>时间</td><td>迭代 1–数个月</td><td>前期编码 ~2 月；运行快</td><td>数小时–数天</td></tr>
+            <tr><td>优化潜力</td><td>满足可接受即停</td><td>NSGA-II 多目标持续进化</td><td>主要 2 项目标</td></tr>
+            <tr><td>协作</td><td>会议 + 文件往来</td><td>需跨专业深度协作</td><td>单平台集中数据</td></tr>
+            <tr><td>技能门槛</td><td>传统建筑技能</td><td>建筑 + 编程</td><td>低门槛操作 / 顾问把关</td></tr>
+            <tr><td>更适合</td><td>所有项目；重语境与审美</td><td>有设计团队；项目专属规则</td><td>模块化住宅；快速可研</td></tr>
+          </tbody>
+          <tbody class="en-only">
+            <tr><td>Cost</td><td>Architect fees</td><td>Specialist + training; low platform cost</td><td>≥£1000/mo subscription</td></tr>
+            <tr><td>Time</td><td>1–several months iteration</td><td>~2 mo setup; fast runs</td><td>Hours to days</td></tr>
+            <tr><td>Optimization</td><td>Stops at acceptable</td><td>NSGA-II multi-objective evolution</td><td>Mainly 2 criteria</td></tr>
+            <tr><td>Collaboration</td><td>Meetings + file exchange</td><td>Deep cross-disciplinary input</td><td>Single-platform data</td></tr>
+            <tr><td>Skills</td><td>Traditional architecture</td><td>Architecture + programming</td><td>Low barrier / consultant review</td></tr>
+            <tr><td>Best fit</td><td>All projects; context &amp; aesthetics</td><td>In-house teams; bespoke rules</td><td>Modular housing; rapid feasibility</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="research-card research-span-2">
+        <h3><span class="num">04</span> <span data-zh="实践复盘 · 问题与解决" data-en="Reflection · Problems &amp; Solutions">实践复盘 · 问题与解决</span></h3>
+        <p class="research-reflect-lead zh-only">
+          论文第 4.7–4.9 节记录了脚本开发过程中的真实试错。以下提炼我在课题之外体现的思考方式：如何界定问题边界、组织复杂工作、优化性能，以及让成果可被他人复用。
+        </p>
+        <p class="research-reflect-lead en-only">
+          Thesis §4.7–4.9 documents real trial-and-error during script development. Below: how I scoped problems, structured work, optimized performance, and made outputs reusable — beyond the research topic itself.
+        </p>
+
+        <div class="research-reflect-list">
+          <article class="research-reflect-item">
+            <h4 class="zh-only">问题：研究范围过大，早期方案走不通</h4>
+            <h4 class="en-only">Problem: Over-scoped research — early approaches failed</h4>
+            <p class="zh-only">最初试图用 GD「从零模拟建筑师」——按地块分区裁剪、再按散点/线性/庭院三种 typology 分别建模，约束过于模糊，算法无法产出可信方案。</p>
+            <p class="en-only">Initially tried to have GD simulate architects from scratch — site subdivision, three typologies (dispersed points/lines/courtyard) — constraints too vague for plausible outputs.</p>
+            <p class="research-reflect-fix zh-only"><strong>解决：</strong>主动收窄至「已有概念框架下的 courtyard 体量多目标优化」，把 GD 价值聚焦在评估与进化，而非无限形态探索。</p>
+            <p class="research-reflect-fix en-only"><strong>Solution:</strong> Narrowed to multi-objective courtyard massing optimization within an existing concept — GD focused on evaluation &amp; evolution, not open-ended form-finding.</p>
+          </article>
+
+          <article class="research-reflect-item">
+            <h4 class="zh-only">问题：脚本耦合严重，一改全崩</h4>
+            <h4 class="en-only">Problem: Tightly coupled script — one change broke everything</h4>
+            <p class="zh-only">Visual programming 节点一多，逻辑牵一发而动全身，调试成本极高。</p>
+            <p class="en-only">As nodes multiplied, logic became fragile — any change risked breaking the whole graph.</p>
+            <p class="research-reflect-fix zh-only"><strong>解决：</strong>拆成 5 个子任务（输入 → 建模 → 合并 → 评估 → Revit 输出），每个模块固定输入/输出，可独立调试与替换。</p>
+            <p class="research-reflect-fix en-only"><strong>Solution:</strong> Split into 5 modules (inputs → modelling → join → evaluation → Revit output), each with fixed I/O for independent debugging.</p>
+          </article>
+
+          <article class="research-reflect-item">
+            <h4 class="zh-only">问题：日照分析计算量爆炸，险些跑崩</h4>
+            <h4 class="en-only">Problem: Sunlight analysis compute explosion</h4>
+            <p class="zh-only">最初将 80 个建筑面 × 11 个太阳位置 × 305 个测点全部送入 Ladybug，约 26.8 万次运算，硬件几乎无法承受。</p>
+            <p class="en-only">Initially fed all 80 surfaces × 11 sun positions × 305 test points into Ladybug — ~268k operations, near hardware limits.</p>
+            <p class="research-reflect-fix zh-only"><strong>解决：</strong>新增「邻近面筛选」子任务，只匹配每个测点周边真正产生遮挡的面，计算量削减约 <strong>90%</strong>。</p>
+            <p class="research-reflect-fix en-only"><strong>Solution:</strong> Added a proximity-filter sub-task — only nearby occluding surfaces per test point — cutting compute by ~<strong>90%</strong>.</p>
+          </article>
+
+          <article class="research-reflect-item">
+            <h4 class="zh-only">问题：脚本只对自己可读，无法交接</h4>
+            <h4 class="en-only">Problem: Script readable only by author — not handover-ready</h4>
+            <p class="zh-only">赶进度时容易忽略文档，后续自己回看或他人接手都很困难。</p>
+            <p class="en-only">Under time pressure, documentation was easy to skip — hard for future self or teammates to pick up.</p>
+            <p class="research-reflect-fix zh-only"><strong>解决：</strong>为节点分组命名、逐步注释逻辑，并在脚本内注明 Dynamo 版本、依赖 package 与输入要求，确保可审查、可复跑。</p>
+            <p class="research-reflect-fix en-only"><strong>Solution:</strong> Renamed node groups, annotated logic step-by-step, documented Dynamo version, packages &amp; input requirements inside the script.</p>
+          </article>
+
+          <article class="research-reflect-item">
+            <h4 class="zh-only">问题：非量化设计意图无法被算法理解</h4>
+            <h4 class="en-only">Problem: Non-quantifiable design intent beyond algorithms</h4>
+            <p class="zh-only">街景一致性、规划语境、客户审美等无法参数化；Hawkins Brown 访谈也指出 GD 应是与设计师的持续对话，而非一键出图。</p>
+            <p class="en-only">Streetscape, planning context &amp; client taste can't be parameterized; Hawkins Brown stressed GD as dialogue with designers, not one-click output.</p>
+            <p class="research-reflect-fix zh-only"><strong>解决：</strong>接受 GD 定位为「粗概念确定后的量化比选工具」，在 Refinery 输出精英方案集后，由建筑师人工筛选与微调——工具辅助决策，而非替代判断。</p>
+            <p class="research-reflect-fix en-only"><strong>Solution:</strong> Positioned GD as quantified comparison after a rough concept — architects select &amp; refine from Pareto elites; tool assists decisions, not judgment.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="research-findings">
+        <div class="research-finding">
+          <h4 data-zh="✓ 技术可行" data-en="✓ Technically Feasible">✓ 技术可行</h4>
+          <p class="zh-only">Dynamo + Refinery 能自动生成 Pareto 最优方案集，输出 3D 预览、雷达图与 Revit 模型。</p>
+          <p class="en-only">Dynamo + Refinery generates Pareto-optimal sets with 3D preview, radar charts &amp; Revit output.</p>
+        </div>
+        <div class="research-finding">
+          <h4 data-zh="◎ 组织落地" data-en="◎ Org Adoption">◎ 组织落地</h4>
+          <p class="zh-only">需 GD 计划、跨专业协作与客户反馈闭环；脚本应模块化、文档化便于复用。</p>
+          <p class="en-only">Requires GD planning, cross-disciplinary collaboration &amp; documented, modular scripts.</p>
+        </div>
+        <div class="research-finding">
+          <h4 data-zh="△ 能力边界" data-en="△ Limitations">△ 能力边界</h4>
+          <p class="zh-only">街景一致性、规划语境等非量化意图仍依赖人工；异形地块是当前弱项。</p>
+          <p class="en-only">Streetscape &amp; planning context still need human judgment; irregular sites remain weak.</p>
+        </div>
+        <div class="research-finding">
+          <h4 data-zh="→ 后续方向" data-en="→ Next Steps">→ 后续方向</h4>
+          <p class="zh-only">与建筑师并行试点真实项目；加强参数化培训；探索 ML 处理更多冲突变量。</p>
+          <p class="en-only">Parallel pilot on live projects; parametric training; ML for more conflicting variables.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <span class="zh-only">© 2026 贺丹晖 · 生成式设计研究</span>
+      <span class="en-only">© 2026 Grace He · Generative Design Research</span>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js?v=3"></script>
+  <script src="js/page-edit.js?v=3"></script>
+  <script src="js/page-layout.js?v=1"></script>
+</body>
+</html>

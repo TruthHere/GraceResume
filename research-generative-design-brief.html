@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="生成式设计研究 — 故事版 · 贺丹晖 MSc Dissertation" />
+  <title>一块地，很多种盖法 · 贺丹晖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/research.css" />
+  <link rel="stylesheet" href="css/layout-overrides.css?v=1" />
+  <link rel="stylesheet" href="css/page-edit.css?v=3" />
+  <link rel="stylesheet" href="css/page-layout.css?v=1" />
+</head>
+<body data-lang="zh">
+
+  <div class="lang-switcher">
+    <button type="button" class="lang-switcher-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+      <span class="lang-switcher-current">中文</span>
+      <span class="lang-switcher-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="lang-switcher-menu" role="listbox" hidden>
+      <li role="presentation"><button type="button" role="option" data-lang="zh" aria-selected="true">中文</button></li>
+      <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
+    </ul>
+  </div>
+
+  <div class="research-page research-brief">
+
+    <header class="research-topbar">
+      <a class="research-back" href="index.html" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
+      <a class="research-alt-link" href="research-generative-design.html" data-zh="技术详细版 →" data-en="Technical version →">技术详细版 →</a>
+    </header>
+
+    <h1 class="research-page-title" data-zh="一块地，很多种盖法" data-en="One Site, Many Ways to Build">一块地，很多种盖法</h1>
+    <p class="research-brief-tag" data-zh="硕士研究 · 故事版" data-en="MSc Research · Story version">硕士研究 · 故事版</p>
+
+    <p class="research-story-hook zh-only">
+      2020 年，我在伦敦一家住宅开发商实习。团队拿到一块地，要在上面规划一片新社区——楼盖多高、院子多大、能住多少人，都要在方案还很粗糙的时候就定下来。我好奇的是：<strong>能不能让电脑先「试」很多种可能，再用数据帮人选，而不是靠手画两三个方案、凭感觉拍板？</strong>这篇故事讲的就是我怎么把这个问题拆开、动手验证、以及最后学到了什么。
+    </p>
+    <p class="research-story-hook en-only">
+      In 2020, during a placement at a London housing developer, my team had a plot of land and needed early answers — how tall, how open, how many homes — while ideas were still rough. I wondered: <strong>could a computer try many possibilities first, and let data guide the choice, instead of sketching two or three options and deciding by gut feel?</strong> This is the story of how I broke that question down, tested it, and what I learned.
+    </p>
+
+    <div class="research-meta-row">
+      <span><strong data-zh="背景" data-en="Context">背景</strong> <span class="zh-only">巴斯大学硕士论文 · Galliard Homes 实习</span><span class="en-only">Bath MSc · Galliard Homes placement</span></span>
+      <span><strong data-zh="案例" data-en="Site">案例</strong> <span class="zh-only">伦敦 Wimbledon 旧球场片区</span><span class="en-only">Wimbledon stadium area, London</span></span>
+    </div>
+
+    <!-- WHY -->
+    <section class="research-wwh">
+      <span class="research-wwh-label">Why</span>
+      <h2 class="zh-only">问题从哪来？</h2>
+      <h2 class="en-only">Where did the problem come from?</h2>
+
+      <p class="zh-only">想象你有一块矩形空地，要在上面盖住宅。各方想要的并不一样：</p>
+      <p class="en-only">Imagine a rectangular plot where you need to plan housing. Different people want different things:</p>
+
+      <ul class="research-story-list zh-only">
+        <li><strong>开发商</strong>希望多盖一些、卖更多套——这直接关系到收益；</li>
+        <li><strong>未来住户</strong>希望房间能晒到太阳、楼与楼之间别太挤；</li>
+        <li><strong>规划部门</strong>要求留出足够的绿地、遵守退线等规则。</li>
+      </ul>
+      <ul class="research-story-list en-only">
+        <li><strong>The developer</strong> wants more homes sold — that drives revenue;</li>
+        <li><strong>Future residents</strong> want sunlight and enough space between buildings;</li>
+        <li><strong>Planners</strong> require green space and setbacks by rule.</li>
+      </ul>
+
+      <p class="zh-only">这些目标<strong>没法同时拉满</strong>——楼盖高了，院子可能就小了；院子大了，能卖的面积又少了。常见做法是：建筑师手画两三个方案，团队开会选一个「看起来对的」，等方案做深了之后，再算一算日照、面积够不够用。往往要几周，而且<strong>只看了极少数几种可能</strong>，缺少「如果当时选另一种会怎样」的对比依据。</p>
+      <p class="en-only">You <strong>can't maximize everything at once</strong> — taller blocks may shrink courtyards; larger courtyards mean less sellable area. The usual path: an architect sketches two or three options, the team picks one that "feels right," and weeks later someone checks daylight and floor area. You only explore a handful of possibilities, with little evidence for what you gave up.</p>
+
+      <p class="research-story-pull zh-only">所以真正的问题不是「电脑能不能设计房子」，而是：<strong>在还早、还便宜改主意的时候，能不能更系统地看清每种选择的得与失，帮决策的人做更有依据的选择？</strong></p>
+      <p class="research-story-pull en-only">So the real question wasn't "Can a computer design buildings?" but: <strong>early on, when changes are still cheap, can we explore trade-offs more systematically and give decision-makers better evidence?</strong></p>
+    </section>
+
+    <!-- WHAT -->
+    <section class="research-wwh">
+      <span class="research-wwh-label">What</span>
+      <h2 class="zh-only">我做了什么？</h2>
+      <h2 class="en-only">What did I do?</h2>
+
+      <p class="zh-only">我没有试图「一键出完美方案」。我做的是一次<strong>有边界的实验</strong>：在一块真实项目用地上，搭一套流程，看电脑能不能在几小时内生成大量候选方案，并按我们关心的几个维度打分排序。</p>
+      <p class="en-only">I didn't try to "auto-generate the perfect design." I ran a <strong>bounded experiment</strong> on a real project site: could a workflow produce many candidate layouts in hours and score them on the dimensions we cared about?</p>
+
+      <ol class="research-story-steps zh-only">
+        <li>
+          <strong>先把问题收窄</strong>
+          <span>不是「设计整片社区」，而是：在这块地的规则内，楼块怎么排、院子多大——哪些数可以变、哪些不能碰。</span>
+        </li>
+        <li>
+          <strong>把「好不好」翻译成可计算的 checklist</strong>
+          <span>例如：总可用面积够不够、楼间距是否达标、院子日照是否满足最低要求——一共五项，对应客户和规划真正在意的点。</span>
+        </li>
+        <li>
+          <strong>让电脑批量生成并打分</strong>
+          <span>一次运行能产出上千种排列组合，每种都有分数和 3D 预览；原来手改模型要数天的事，压缩到大约 15 分钟一轮。</span>
+        </li>
+        <li>
+          <strong>和另外两种常见做法对照</strong>
+          <span>手画方案、以及市面上「填参数就出图」的商用工具——三种路子各适合什么、各卡在哪，一并写进论文。</span>
+        </li>
+      </ol>
+      <ol class="research-story-steps en-only">
+        <li>
+          <strong>Narrow the question first</strong>
+          <span>Not "design the whole neighbourhood" — but on this site, under these rules: how blocks sit, how big courtyards are — what can move and what can't.</span>
+        </li>
+        <li>
+          <strong>Turn "good or bad" into a checklist</strong>
+          <span>Total usable area, spacing between blocks, minimum courtyard sunlight — five metrics tied to what client and planners actually care about.</span>
+        </li>
+        <li>
+          <strong>Generate and score in bulk</strong>
+          <span>One run yields 1,000+ layout variants, each scored with a 3D preview; work that took days of manual remodelling shrank to ~15 minutes per batch.</span>
+        </li>
+        <li>
+          <strong>Compare two other common paths</strong>
+          <span>Hand-drawn options and off-the-shelf "fill-in-parameters" tools — where each approach shines and where each gets stuck.</span>
+        </li>
+      </ol>
+
+      <p class="zh-only">实验结论是：<strong>技术上走得通</strong>——电脑确实能批量产出方案并可视化对比。但我也清楚它的位置：它适合「大方向定了之后，帮你在数字层面比选」；街景好不好看、和周边融不融合，仍然要人来判断。</p>
+      <p class="en-only">The experiment showed: <strong>it works technically</strong> — the machine can batch-produce options and visualize comparisons. But I was clear on its place: best after a rough direction is set, for numeric comparison; whether a street "feels right" or fits its context still needs human judgment.</p>
+    </section>
+
+    <!-- HOW -->
+    <section class="research-wwh">
+      <span class="research-wwh-label">How</span>
+      <h2 class="zh-only">我是怎么想的、怎么做的？</h2>
+      <h2 class="en-only">How did I think and work through it?</h2>
+
+      <p class="zh-only">下面是我实际走通的思路——重点不是用了什么软件，而是<strong>遇到模糊需求时，怎么一步步把它变成可验证的事</strong>。</p>
+      <p class="en-only">This is the path I actually took — less about which software, more about <strong>turning a fuzzy brief into something you can test</strong>.</p>
+
+      <ol class="research-story-steps zh-only">
+        <li>
+          <strong>先问对人</strong>
+          <span>跟开发商同事聊：你们在项目早期最纠结什么？答案是「不知道选 A 还是 B 会牺牲什么」——这成了我的研究切口。</span>
+        </li>
+        <li>
+          <strong>写规则，而不是画终稿</strong>
+          <span>我把「可以怎么变」写成参数（高度、退距、院子大小…），把「不能越线」写成约束。电脑改的是数字，不是我一张张改图。</span>
+        </li>
+        <li>
+          <strong>做 → 撞墙 → 改</strong>
+          <span>实习期间脚本跑不通、算太慢、结果不合理都发生过。每次卡住，就回到「这项指标到底在回答什么问题」——往往问题定义清楚了，技术解法也跟着清楚。</span>
+        </li>
+        <li>
+          <strong>不迷信「最优解」</strong>
+          <span>电脑会给出一批「没有明显短板」的候选，但不会告诉你哪条街该长什么样。最后一步永远是人在看：从候选里挑几组，再交给设计团队微调。</span>
+        </li>
+        <li>
+          <strong>诚实地做对比</strong>
+          <span>手画、自研工具、商用软件——我没有宣称某一种最好，而是列出各自擅长什么、代价是什么，方便后来的人按场景选。</span>
+        </li>
+      </ol>
+      <ol class="research-story-steps en-only">
+        <li>
+          <strong>Ask the people who decide</strong>
+          <span>I talked to developer colleagues: what's hardest early on? "Not knowing what you give up by choosing A over B" — that became my research angle.</span>
+        </li>
+        <li>
+          <strong>Write rules, not final drawings</strong>
+          <span>I encoded what can change (height, setbacks, courtyard size…) and what can't. The machine tweaks numbers, not slide decks.</span>
+        </li>
+        <li>
+          <strong>Build → hit walls → revise</strong>
+          <span>Scripts broke, runs were slow, outputs looked wrong. Each time I went back to "what question is this metric answering?" — clearer questions often led to clearer fixes.</span>
+        </li>
+        <li>
+          <strong>Don't worship "the optimum"</strong>
+          <span>The computer surfaces candidates with no obvious weak spot — but not what a street should feel like. The last step is always human: pick a few, then let designers refine.</span>
+        </li>
+        <li>
+          <strong>Compare honestly</strong>
+          <span>Hand-drawn, custom-built, off-the-shelf — I didn't crown a winner; I listed what each is good at and what each costs, so others can choose by context.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- SO WHAT -->
+    <section class="research-wwh research-wwh--last">
+      <span class="research-wwh-label" data-zh="收获" data-en="So what">收获</span>
+      <h2 class="zh-only">这段经历说明什么？</h2>
+      <h2 class="en-only">What does this show?</h2>
+
+      <p class="zh-only">如果你不熟悉建筑，可以把整个项目理解成：<strong>在一个约束很多的选择题里，我设计并验证了一套「批量试答案 + 透明打分」的方法</strong>。它体现的能力包括：</p>
+      <p class="en-only">If architecture isn't your field, think of it this way: <strong>inside a heavily constrained multiple-choice problem, I designed and tested a way to "try many answers and score them openly."</strong> That reflects:</p>
+
+      <div class="research-capabilities">
+        <div class="zh-only">
+          <strong>问题拆解</strong>
+          <span>把「用电脑设计」这种大而空的说法，收窄成一块地、五个指标、三种做法可比的实验。</span>
+        </div>
+        <div class="en-only">
+          <strong>Problem framing</strong>
+          <span>Turned a vague "use computers to design" into one site, five metrics, three approaches — something testable.</span>
+        </div>
+        <div class="zh-only">
+          <strong>从 0 到 1 搭建</strong>
+          <span>不会编程起步，在产业环境里自学并完成整套自动化流程（论文 Distinction）。</span>
+        </div>
+        <div class="en-only">
+          <strong>Building from zero</strong>
+          <span>Started without coding skills; learned and shipped the full workflow in industry (thesis: Distinction).</span>
+        </div>
+        <div class="zh-only">
+          <strong>批判性判断</strong>
+          <span>工具能做什么、不能做什么，敢写进结论；不夸大，也不因为难就放弃验证。</span>
+        </div>
+        <div class="en-only">
+          <strong>Critical judgment</strong>
+          <span>Clear on what the tool can and can't do — no overselling, no skipping validation because it's hard.</span>
+        </div>
+        <div class="zh-only">
+          <strong>协作语境</strong>
+          <span>研究问题来自真实项目；结论面向「以后谁要用、怎么落地」，而不只是实验室演示。</span>
+        </div>
+        <div class="en-only">
+          <strong>Real-world context</strong>
+          <span>The question came from a live project; conclusions aimed at who would use this next — not a lab demo alone.</span>
+        </div>
+      </div>
+    </section>
+
+    <p class="research-doc-link">
+      <a href="assets/dissertation-generative-design.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="zh-only">📄 想深入看方法与数据？完整论文 PDF</span>
+        <span class="en-only">📄 Want methods and data? Full dissertation PDF</span>
+      </a>
+      ·
+      <a href="research-generative-design.html">
+        <span class="zh-only">技术详细版（含流程图与对比表）</span>
+        <span class="en-only">Technical version (workflows &amp; comparison tables)</span>
+      </a>
+    </p>
+
+    <footer>
+      <span class="zh-only">© 2026 贺丹晖</span>
+      <span class="en-only">© 2026 Grace He</span>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js?v=3"></script>
+  <script src="js/page-edit.js?v=3"></script>
+  <script src="js/page-layout.js?v=1"></script>
+</body>
+</html>

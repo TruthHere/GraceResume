@@ -1,0 +1,11 @@
+{
+  "name": "gracecareer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs"
+  },
+  "dependencies": {
+    "node-html-parser": "^7.0.1"
+  }
+}

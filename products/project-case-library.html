@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目案例库 · Grace He</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+  <link rel="stylesheet" href="../css/product.css?v=11" />
+  <link rel="stylesheet" href="../css/layout-overrides.css?v=1" />
+  <link rel="stylesheet" href="../css/page-edit.css?v=3" />
+  <link rel="stylesheet" href="../css/page-layout.css?v=1" />
+</head>
+<body data-lang="zh" class="product-body--one-screen">
+  <div class="lang-switcher">
+    <button type="button" class="lang-switcher-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+      <span class="lang-switcher-current">中文</span>
+      <span class="lang-switcher-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="lang-switcher-menu" role="listbox" hidden>
+      <li role="presentation"><button type="button" role="option" data-lang="zh" aria-selected="true">中文</button></li>
+      <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
+    </ul>
+  </div>
+  <article class="product-page product-page--showcase product-page--one-screen">
+    <a href="../index.html" class="back-link" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
+    <header class="product-header">
+      <h1 data-zh="One JLL 项目案例库" data-en="One JLL Case Library">One JLL 项目案例库</h1>
+      <p class="product-tag">Vibe Coding · Cursor · HTML 交互原型</p>
+      <div class="product-meta">
+        <span data-zh="知识管理" data-en="Knowledge Base">知识管理</span>
+        <span data-zh="投标 / BD" data-en="Bids &amp; BD">投标 / BD</span>
+        <span data-zh="工装项目" data-en="Fit-out Projects">工装项目</span>
+      </div>
+    </header>
+
+    <div class="product-showcase-stacked">
+      <div class="product-story product-story--row">
+        <section class="product-story-block">
+          <p class="product-story-label">Why</p>
+          <h2 class="product-story-lead zh-only">公司积累了很多项目案例，但投标或对标时，往往只有表格里一行摘要，找不到完整材料和可引用的成果。</h2>
+          <h2 class="product-story-lead en-only">The firm has years of project cases — yet when bidding or benchmarking, people often get only a one-line table summary, not the full materials or quotable outcomes.</h2>
+          <p class="zh-only">在仲量联行做项目时，历史案例分散在 Excel 清单、个人文件夹和各类 PPT 里。列表里能看到客户名和一句话简介，但成果数据、客户反馈、完整案例 deck 常常对不上或缺失——BD、投标和技术标撰写时，很难快速回答「我们做过哪些类似项目、交付了什么、结果如何」。</p>
+          <p class="en-only">At JLL, past cases lived across Excel lists, personal folders, and scattered decks. A row might show the client and a one-line blurb, but outcome data, client feedback, and the full case presentation were often missing or hard to match — slowing BD, bids, and technical proposals when teams needed to answer: “What similar work have we done, what did we deliver, and what were the results?”</p>
+        </section>
+
+        <section class="product-story-block">
+          <p class="product-story-label">What</p>
+          <h2 class="product-story-lead zh-only">把案例做成可检索的知识库：搜关键词、筛维度，从列表直达完整案例。</h2>
+          <h2 class="product-story-lead en-only">A searchable case library: keyword search, multi-filter narrowing, and a path from list to full case.</h2>
+          <p class="zh-only">这是我在 JLL GPT 侧栏设计的「One JLL Case Library」交互原型。用户可按客户名、标签、摘要、服务内容等关键词检索，并用服务城市、业务线、客户行业、服务年份等条件组合收窄结果。列表展示客户、负责人、标签、摘要与服务内容；展开行可查看成果数据与客户反馈；进一步打开完整案例详情页，并跳转案例 PPT。</p>
+          <p class="en-only">An interactive prototype for the JLL GPT sidebar: “One JLL Case Library.” Users search by client, tags, summary, or service scope, then narrow with city, business line, industry, and service year. The table shows client, lead, tags, summary, and services; expanding a row surfaces outcome metrics and client feedback; a detail view and PPT link complete the path from discovery to reusable experience.</p>
+        </section>
+
+        <section class="product-story-block">
+          <p class="product-story-label">How</p>
+          <h2 class="product-story-lead zh-only">从 PM 日常检索场景出发，用 Cursor 独立做出可演示的 HTML 原型。</h2>
+          <h2 class="product-story-lead en-only">Started from how PMs actually search cases — shipped a demo-ready HTML prototype with Cursor.</h2>
+          <p class="zh-only">我先梳理业务人员需要的字段与筛选维度（如「搜 BIM 能立刻看到相关项目」「再选上海进一步收窄」），再实现列表、分页、行内展开与详情页等交互。演示视频完整走通：进入案例库 → 浏览全量列表 → 关键词检索 → 多维筛选 → 查看成果与反馈 → 打开完整案例。</p>
+          <p class="en-only">I mapped the fields and filters PMs need (e.g. search “BIM” for related projects, then add “Shanghai” to narrow), then built list, pagination, row expansion, and detail views in HTML. The demo walks through: enter library → browse full list → keyword search → combined filters → outcomes and feedback → open full case.</p>
+          <p class="product-story-highlight zh-only">演示数据为模拟样本，不代表真实客户项目。</p>
+          <p class="product-story-highlight en-only">Sample data is mock content — not real client projects.</p>
+        </section>
+      </div>
+
+      <aside class="product-demo product-demo--bottom" aria-label="Product demo">
+        <div class="product-demo-frame">
+          <div class="product-demo-screen product-demo-screen--wide">
+            <video
+              src="../assets/jll-case-library.mov"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+              controls
+              aria-label="One JLL Case Library demo"
+            ></video>
+          </div>
+        </div>
+        <p class="product-demo-caption zh-only">演示：列表浏览 → 关键词「BIM」→ 城市筛选 → 展开成果 → 打开完整案例</p>
+        <p class="product-demo-caption en-only">Demo: browse list → search “BIM” → filter by city → expand outcomes → open full case</p>
+      </aside>
+    </div>
+  </article>
+  <script src="../js/main.js?v=3"></script>
+  <script src="../js/page-edit.js?v=3"></script>
+  <script src="../js/page-layout.js?v=1"></script>
+</body>
+</html>

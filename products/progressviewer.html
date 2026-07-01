@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProgressViewer 现场进度相册 · Grace He</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+  <link rel="stylesheet" href="../css/product.css?v=2" />
+  <link rel="stylesheet" href="../css/layout-overrides.css?v=1" />
+  <link rel="stylesheet" href="../css/page-edit.css?v=3" />
+  <link rel="stylesheet" href="../css/page-layout.css?v=1" />
+</head>
+<body data-lang="zh">
+  <div class="lang-switcher">
+    <button type="button" class="lang-switcher-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+      <span class="lang-switcher-current">中文</span>
+      <span class="lang-switcher-icon" aria-hidden="true"></span>
+    </button>
+    <ul class="lang-switcher-menu" role="listbox" hidden>
+      <li role="presentation"><button type="button" role="option" data-lang="zh" aria-selected="true">中文</button></li>
+      <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
+    </ul>
+  </div>
+  <article class="product-page product-page--showcase">
+    <a href="../index.html" class="back-link" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
+    <header class="product-header">
+      <h1 data-zh="ProgressViewer 现场进度相册" data-en="ProgressViewer — Site Progress Album">ProgressViewer 现场进度相册</h1>
+      <p class="product-tag">Vibe Coding · Cursor · 微信小程序</p>
+      <div class="product-meta">
+        <span data-zh="微信小程序" data-en="WeChat Mini Program">微信小程序</span>
+        <span>PRD v1.2</span>
+        <span data-zh="体验版 1.0.0" data-en="Beta 1.0.0">体验版 1.0.0</span>
+        <span data-zh="现场管理" data-en="Site Management">现场管理</span>
+      </div>
+    </header>
+
+    <div class="product-showcase-grid">
+      <div class="product-story">
+        <section class="product-story-block">
+          <p class="product-story-label">Why</p>
+          <h2 class="product-story-lead zh-only">施工现场需要定期拍照留痕，但照片堆在手机相册里，很快就对不上项目和位置。</h2>
+          <h2 class="product-story-lead en-only">Construction sites need regular photo documentation — but shots pile up in the phone gallery and quickly lose their project and location context.</h2>
+          <p class="zh-only">在工装施工项目里，项目经理每周会到工地定点拍照，记录「某一层、某一处」建到了什么进度——这些照片是写周报、开会汇报、给业主或设计方同步情况的常用素材。现实中大家用手机随手拍，照片全部落在个人相册，和生活照、截图混在一起；照片本身也不会自动记下属于哪个项目、对应平面图上的哪个位置、哪一天拍的。过一两周再想找某次巡检的对比图，只能靠人工翻相册；临时通过微信转发几张，接收方也很难说清楚具体是哪儿。</p>
+          <p class="en-only">On commercial fit-out projects, the project manager visits the site weekly to photograph fixed spots — documenting progress at “this floor, this location.” These photos feed weekly reports, status meetings, and updates to the client or design team. In practice, people shoot on their phones and everything lands in the personal gallery, mixed with daily life shots and screenshots. A photo doesn’t automatically record which project it belongs to, which spot on the floor plan it shows, or when it was taken. A week or two later, finding a specific inspection shot means scrolling and guessing; forwarding a few images on WeChat still leaves the recipient unsure where exactly they were taken.</p>
+        </section>
+
+        <section class="product-story-block">
+          <p class="product-story-label">What</p>
+          <h2 class="product-story-lead zh-only">在楼层平面图上点位置，拍照或选图归档，以后按日期和点位找照片。</h2>
+          <h2 class="product-story-lead en-only">Mark a spot on the floor plan, capture or pick a photo, archive it — then browse by date or location.</h2>
+          <p class="zh-only">这是面向项目经理的微信小程序：创建项目、上传平面图，在图上选点或新建点位后，现场拍照或从相册选已有图，确认归档。照片绑定项目、平面图、点位与拍摄时间；项目相册支持「按日期」（默认）和「按点位」两种阅览；需要对外同步时，可一键生成带说明的分享图，通过微信发图。界面步骤少、按钮大，适合工地单手操作。</p>
+          <p class="en-only">A WeChat mini program for project managers: create a project, upload floor plans, pick or add a point on the map, then shoot on-site or select an existing photo and confirm archive. Each photo is tied to project, plan, point, and capture time. The project album supports browsing by date (default) or by point. When sharing externally, generate a labeled summary image and send via WeChat. Few steps, large controls — built for one-handed use on site.</p>
+        </section>
+
+        <section class="product-story-block">
+          <p class="product-story-label">How</p>
+          <h2 class="product-story-lead zh-only">无编程基础，用 Cursor 独立从需求文档到可演示的体验版。</h2>
+          <h2 class="product-story-lead en-only">No coding background — independently shipped from PRD to a demo-ready beta with Cursor.</h2>
+          <p class="zh-only">从 v1.0 需求骨架到 v1.2 完整闭环：先写 PRD 与流程，再在微信开发者工具中实现「选点 → 采源 → 确认归档 → 相册回看 → 分享图」主路径，并在真机上验收弱网、户外亮光与单手操作。技术选型为微信云开发：平面图存云端，照片存本机、业务元数据（项目、点位、时间等）存云数据库——在 PRD 测算下，典型工地用量月费可控制在基础套餐 19.9 元以内。</p>
+          <p class="en-only">From v1.0 PRD skeleton to v1.2 full loop: wrote requirements and flows first, then built the main path — pick point → choose source → confirm archive → browse album → share image — in WeChat DevTools, with real-device testing for weak network, outdoor glare, and one-handed use. Stack: WeChat Cloud Base. Floor plans in cloud storage; photos on device; metadata (project, point, time) in cloud database. Per PRD estimates, typical site usage stays within the ¥19.9/month base plan.</p>
+          <p class="product-story-highlight zh-only">已交付 PRD v1.2 ↔ 体验版 1.0.0，GitHub 存档；v1.3 规划相册读库优化与进度/事件记录模式，尚未发布新版体验包。</p>
+          <p class="product-story-highlight en-only">Delivered PRD v1.2 ↔ beta 1.0.0, archived on GitHub. v1.3 plans album read optimization and progress/event recording modes — no new beta uploaded yet.</p>
+        </section>
+      </div>
+
+      <aside class="product-demo" aria-label="Product demo">
+        <div class="product-demo-frame">
+          <div class="product-demo-screen">
+            <video
+              src="../assets/progressviewer-mockup.mp4"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+              controls
+              aria-label="ProgressViewer product demo"
+            ></video>
+          </div>
+        </div>
+        <p class="product-demo-caption zh-only">演示：选点 → 拍照归档 → 按日期/点位回看 → 生成分享图</p>
+        <p class="product-demo-caption en-only">Demo: pick point → capture &amp; archive → browse by date/point → share image</p>
+      </aside>
+    </div>
+
+    <p class="product-version-note zh-only">事实依据：PRD v1.2（2026-05-21 存档）· 体验版 1.0.0 · 目标用户为相册所有者（项目经理）；v1.2 不含受邀只读与照片默认上云。</p>
+    <p class="product-version-note en-only">Sources: PRD v1.2 (archived 2026-05-21) · beta 1.0.0 · target user: album owner (PM); v1.2 excludes invited read-only access and default cloud photo storage.</p>
+  </article>
+  <script src="../js/main.js?v=3"></script>
+  <script src="../js/page-edit.js?v=3"></script>
+  <script src="../js/page-layout.js?v=1"></script>
+</body>
+</html>

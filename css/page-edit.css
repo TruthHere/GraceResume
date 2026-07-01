@@ -1,0 +1,121 @@
+/* Inline page edit — only visible with ?edit=1 (see js/page-edit.js) */
+body:not(.edit-enabled) .edit-hotzone,
+body:not(.edit-enabled) .edit-toggle {
+  display: none;
+}
+
+body.edit-enabled {
+  padding-top: 36px;
+}
+
+body.edit-enabled::after {
+  content: "文案编辑 · 点击文字修改 · ⌘S 保存 · 点「完成」退出";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10002;
+  padding: 8px 12px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 13px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.edit-hotzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+body.edit-enabled .edit-hotzone {
+  top: 36px;
+  height: 88px;
+}
+
+.edit-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10003;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius, 6px);
+  border: 1px solid var(--border, #e5e5e3);
+  background: var(--surface, #fff);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text, #1c1c1c);
+  box-shadow: var(--shadow, 0 8px 32px rgba(0, 0, 0, 0.06));
+  opacity: 1;
+  font-family: inherit;
+}
+
+body.edit-enabled .edit-toggle {
+  top: 44px;
+}
+
+.edit-toggle:hover,
+.edit-toggle:focus-visible,
+.edit-toggle.active {
+  outline: 2px solid var(--accent, #3d5a6c);
+  outline-offset: 2px;
+}
+
+.edit-toggle svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+body.edit-mode [contenteditable="true"] {
+  outline: 2px dashed var(--accent, #3d5a6c);
+  outline-offset: 3px;
+  cursor: text;
+}
+
+.edit-toast {
+  position: fixed;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10004;
+  max-width: min(92vw, 520px);
+  padding: 10px 16px;
+  border-radius: var(--radius, 6px);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.edit-toast--success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.edit-toast--error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.edit-toast--info {
+  background: var(--surface, #fff);
+  color: var(--text, #1c1c1c);
+  border: 1px solid var(--border, #e5e5e3);
+}
