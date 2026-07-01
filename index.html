@@ -6,7 +6,10 @@
   <meta name="description" content="贺丹晖 Grace He — 项目经理 · AI 产品探索者 | Project Manager · AI Product Explorer" />
   <title>贺丹晖 Grace He · Resume</title>
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/fonts.css?v=1" />
+  <link rel="preload" href="assets/photo.jpg" as="image" />
+  <link rel="stylesheet" href="css/fonts-inter.css?v=1" />
+  <link rel="stylesheet" href="css/fonts-noto.css?v=1" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="css/fonts-noto.css?v=1" /></noscript>
   <link rel="stylesheet" href="css/style.css?v=3" />
   <script src="js/page-path.js?v=1"></script>
   <link rel="stylesheet" href="css/layout-overrides.css?v=2" />
@@ -28,7 +31,10 @@
   <div class="layout">
     <aside>
       <div class="photo-wrap">
-        <img src="assets/photo.png" alt="Grace He / 贺丹晖" width="168" height="210" />
+        <picture>
+          <source srcset="assets/photo.jpg" type="image/jpeg" />
+          <img src="assets/photo.png" alt="Grace He / 贺丹晖" width="168" height="210" fetchpriority="high" decoding="async" />
+        </picture>
       </div>
       <h1 data-zh="贺丹晖" data-en="Grace He">贺丹晖</h1>
       <p class="name-alt en-only">Danhui HE</p>
@@ -113,7 +119,7 @@
         <article class="job">
           <div class="entry-heading">
             <div class="entry-logo">
-              <img src="assets/logos/jll.svg" alt="JLL" width="52" height="52" />
+              <img src="assets/logos/jll.svg" alt="JLL" width="52" height="52" loading="lazy" decoding="async" />
             </div>
             <div class="entry-title">
               <div class="job-header">
@@ -144,7 +150,7 @@
         <article class="job">
           <div class="entry-heading">
             <div class="entry-logo entry-logo--arcadis">
-              <img src="assets/logos/arcadis.jpg" alt="Arcadis" width="52" height="52" />
+              <img src="assets/logos/arcadis.jpg" alt="Arcadis" width="52" height="52" loading="lazy" decoding="async" />
             </div>
             <div class="entry-title">
               <div class="job-header">
@@ -169,7 +175,7 @@
         <article class="job">
           <div class="entry-heading">
             <div class="entry-logo">
-              <img src="assets/logos/galliard.png" alt="Galliard Homes" width="52" height="52" />
+              <img src="assets/logos/galliard.png" alt="Galliard Homes" width="52" height="52" loading="lazy" decoding="async" />
             </div>
             <div class="entry-title">
               <div class="job-header">
@@ -201,7 +207,7 @@
         <div class="edu-item">
           <div class="entry-heading">
             <div class="entry-logo">
-              <img src="assets/logos/bath.png" alt="University of Bath" width="52" height="52" />
+              <img src="assets/logos/bath.png" alt="University of Bath" width="52" height="52" loading="lazy" decoding="async" />
             </div>
             <div class="entry-title">
               <div class="job-header">
@@ -227,7 +233,7 @@
         <div class="edu-item">
           <div class="entry-heading">
             <div class="entry-logo entry-logo--unnc">
-              <img src="assets/logos/unnc.webp" alt="University of Nottingham Ningbo China" width="52" height="52" />
+              <img src="assets/logos/unnc.webp" alt="University of Nottingham Ningbo China" width="52" height="52" loading="lazy" decoding="async" />
             </div>
             <div class="entry-title">
               <div class="job-header">

@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ProgressViewer 现场进度相册 · Grace He</title>
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="../css/fonts.css?v=1" />
+  <link rel="stylesheet" href="../css/fonts-inter.css?v=1" />
+  <link rel="stylesheet" href="../css/fonts-noto.css?v=1" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../css/fonts-noto.css?v=1" /></noscript>
   <link rel="stylesheet" href="../css/style.css?v=3" />
-  <link rel="stylesheet" href="../css/product.css?v=13" />
+  <link rel="stylesheet" href="../css/product.css?v=18" />
   <script src="../js/page-path.js?v=1"></script>
   <link rel="stylesheet" href="../css/layout-overrides.css?v=2" />
   <script src="../js/load-dev-tools.js?v=1"></script>
@@ -67,16 +69,21 @@
 
       <aside class="product-demo" aria-label="Product demo">
         <div class="product-demo-frame">
-          <div class="product-demo-screen">
+          <div class="product-demo-screen video-lazy" data-video-src="../assets/progressviewer-mockup-web.mp4">
             <video
-              src="../assets/progressviewer-mockup-h264.mp4"
               muted
               playsinline
+              webkit-playsinline
               loop
               preload="none"
               controls
+              poster="../assets/progressviewer-poster.jpg"
               aria-label="ProgressViewer product demo"
             ></video>
+            <button type="button" class="video-play-btn">
+              <span class="zh-only">点击播放演示</span>
+              <span class="en-only">Tap to play demo</span>
+            </button>
           </div>
         </div>
         <p class="product-demo-caption zh-only">演示：选点 → 拍照归档 → 按日期/点位回看 → 生成分享图</p>
@@ -88,5 +95,6 @@
     <p class="product-version-note en-only">Sources: PRD v1.2 (archived 2026-05-21) · beta 1.0.0 · target user: album owner (PM); v1.2 excludes invited read-only access and default cloud photo storage.</p>
   </article>
   <script src="../js/main.js?v=3"></script>
+  <script src="../js/video-lazy.js?v=1"></script>
 </body>
 </html>
