@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ProgressViewer 现场进度相册 · Grace He</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/fonts.css?v=1" />
   <link rel="stylesheet" href="../css/style.css?v=3" />
   <link rel="stylesheet" href="../css/product.css?v=13" />
   <script src="../js/page-path.js?v=1"></script>
   <link rel="stylesheet" href="../css/layout-overrides.css?v=2" />
-  <link rel="stylesheet" href="../css/page-edit.css?v=3" />
-  <link rel="stylesheet" href="../css/page-layout.css?v=1" />
+  <script src="../js/load-dev-tools.js?v=1"></script>
 </head>
 <body data-lang="zh">
   <div class="lang-switcher">
@@ -71,11 +70,10 @@
           <div class="product-demo-screen">
             <video
               src="../assets/progressviewer-mockup-h264.mp4"
-              autoplay
               muted
               playsinline
               loop
-              preload="metadata"
+              preload="none"
               controls
               aria-label="ProgressViewer product demo"
             ></video>
@@ -90,7 +88,5 @@
     <p class="product-version-note en-only">Sources: PRD v1.2 (archived 2026-05-21) · beta 1.0.0 · target user: album owner (PM); v1.2 excludes invited read-only access and default cloud photo storage.</p>
   </article>
   <script src="../js/main.js?v=3"></script>
-  <script src="../js/page-edit.js?v=3"></script>
-  <script src="../js/page-layout.js?v=3"></script>
 </body>
 </html>
