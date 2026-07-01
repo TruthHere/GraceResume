@@ -11,6 +11,8 @@
     { key: "paddingTop", label: "上内边距", prop: "padding-top", min: 0, max: 80, step: 4 },
     { key: "paddingBottom", label: "下内边距", prop: "padding-bottom", min: 0, max: 80, step: 4 },
     { key: "gap", label: "子元素间距", prop: "gap", min: 0, max: 64, step: 4 },
+    { key: "height", label: "高度（0=自动）", prop: "height", min: 0, max: 1200, step: 8, autoAtZero: true },
+    { key: "minHeight", label: "最小高度", prop: "min-height", min: 0, max: 600, step: 8, autoAtZero: true },
   ];
 
   const TARGET_SELECTOR = [
@@ -19,8 +21,15 @@
     "section",
     "footer",
     "header.product-header",
+    ".product-page",
+    ".product-showcase-grid",
+    ".product-showcase-stacked",
     ".product-story",
     ".product-story-block",
+    ".product-demo",
+    ".product-demo-frame",
+    ".product-demo-screen",
+    "p.product-demo-caption",
     ".back-link",
     ".research-topbar",
     "article.job",
@@ -29,8 +38,6 @@
     ".contact",
     ".entry-heading",
   ].join(", ");
-
-  document.documentElement.dataset.layoutPage = location.pathname;
 
   let overrides = {};
   let selectedEl = null;
@@ -88,7 +95,7 @@
 
     return (
       'html[data-layout-page="' +
-      location.pathname +
+      normalizePagePath() +
       '"] .' +
       rootClass +
       " " +
@@ -110,13 +117,25 @@
 
   function readComputed(el) {
     const cs = getComputedStyle(el);
+    const heightPx = pxToNum(cs.height);
+    const minHeightPx = pxToNum(cs.minHeight);
     return {
       marginTop: pxToNum(cs.marginTop),
       marginBottom: pxToNum(cs.marginBottom),
       paddingTop: pxToNum(cs.paddingTop),
       paddingBottom: pxToNum(cs.paddingBottom),
       gap: pxToNum(cs.gap) || pxToNum(cs.rowGap) || 0,
+      height: cs.height === "auto" ? 0 : heightPx,
+      minHeight: cs.minHeight === "auto" || minHeightPx === 0 ? 0 : minHeightPx,
     };
+  }
+
+  function applyStyleValue(el, propDef, value) {
+    if (propDef.autoAtZero && value === 0) {
+      el.style.removeProperty(propDef.prop);
+      return;
+    }
+    el.style.setProperty(propDef.prop, value + "px");
   }
 
   function getOverride(selector) {
@@ -130,9 +149,12 @@
         const el = document.querySelector(selector);
         if (!el) return;
         PROPS.forEach(function (p) {
-          if (rules[p.key] != null) {
-            el.style.setProperty(p.prop, rules[p.key] + "px");
+          if (rules[p.key] == null) return;
+          if (p.autoAtZero && rules[p.key] === 0) {
+            el.style.removeProperty(p.prop);
+            return;
           }
+          el.style.setProperty(p.prop, rules[p.key] + "px");
         });
       } catch (_) {
         /* ignore invalid selector */
@@ -145,7 +167,7 @@
       const res = await fetch("/data/layout-overrides.json");
       if (!res.ok) return;
       const data = await res.json();
-      overrides = data[location.pathname] || {};
+      overrides = data[normalizePagePath()] || {};
       applyOverridesToDom();
     } catch (_) {
       /* ignore */
@@ -216,14 +238,34 @@
       selector.split(" ").slice(-2).join(" ") +
       "</code></p>";
 
+    if (el.classList.contains("product-story-block")) {
+      const hint = document.createElement("p");
+      hint.className = "layout-panel-hint";
+      hint.textContent =
+        "Why / What / How 之间的间距由外层 product-story 的「子元素间距」控制，请点选整块 story 区域调节 gap。";
+      controls.appendChild(hint);
+    } else if (el.matches(".product-demo, .product-demo-frame, .product-demo-screen")) {
+      const hint = document.createElement("p");
+      hint.className = "layout-panel-hint";
+      hint.textContent =
+        "演示区下方空白：点选 product-demo，将「高度」滑到 0（自动）；或调 product-demo-screen 的「最小高度」。";
+      controls.appendChild(hint);
+    } else if (el.matches("section")) {
+      const hint = document.createElement("p");
+      hint.className = "layout-panel-hint";
+      hint.textContent = "章节之间的空白主要用「下外边距」调节。";
+      controls.appendChild(hint);
+    }
+
     PROPS.forEach(function (p) {
       const val = merged[p.key] != null ? merged[p.key] : 0;
+      const displayVal = p.autoAtZero && val === 0 ? "自动" : val + "px";
       const row = document.createElement("label");
       row.innerHTML =
         p.label +
         ' <span class="layout-value">' +
-        val +
-        "px</span>" +
+        displayVal +
+        "</span>" +
         '<input type="range" min="' +
         p.min +
         '" max="' +
@@ -243,12 +285,20 @@
     controls.querySelectorAll("input[type=range]").forEach(function (input) {
       input.addEventListener("input", function () {
         const key = input.dataset.key;
-        const prop = input.dataset.prop;
-        const px = input.value + "px";
-        input.parentElement.querySelector(".layout-value").textContent = input.value + "px";
-        el.style.setProperty(prop, px);
+        const propDef = PROPS.find(function (p) {
+          return p.key === key;
+        });
+        const num = Number(input.value);
+        const displayVal =
+          propDef && propDef.autoAtZero && num === 0 ? "自动" : input.value + "px";
+        input.parentElement.querySelector(".layout-value").textContent = displayVal;
+        applyStyleValue(el, propDef || { prop: input.dataset.prop }, num);
         if (!overrides[selector]) overrides[selector] = {};
-        overrides[selector][key] = Number(input.value);
+        if (propDef && propDef.autoAtZero && num === 0) {
+          overrides[selector][key] = 0;
+        } else {
+          overrides[selector][key] = num;
+        }
       });
     });
   }
@@ -290,14 +340,21 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          pagePath: location.pathname,
+          pagePath: normalizePagePath(),
           overrides: overrides,
         }),
       });
       const data = await res.json().catch(function () {
         return {};
       });
-      if (!res.ok || !data.ok) throw new Error(data.error || "保存失败");
+      if (!res.ok || !data.ok) {
+        throw new Error(
+          data.error ||
+            (res.status === 404
+              ? "布局保存接口不存在。请重启 npm run dev 后再试。"
+              : "保存失败。请确认使用 npm run dev 启动。")
+        );
+      }
       showToast(ui, "间距已保存，部署后也会生效", "success");
     } catch (err) {
       showToast(ui, err.message || "保存失败", "error");

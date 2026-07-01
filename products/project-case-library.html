@@ -7,12 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css?v=3" />
-  <link rel="stylesheet" href="../css/product.css?v=11" />
-  <link rel="stylesheet" href="../css/layout-overrides.css?v=1" />
+  <link rel="stylesheet" href="../css/product.css?v=17" />
+  <script src="../js/page-path.js?v=1"></script>
+  <link rel="stylesheet" href="../css/layout-overrides.css?v=2" />
   <link rel="stylesheet" href="../css/page-edit.css?v=3" />
   <link rel="stylesheet" href="../css/page-layout.css?v=1" />
 </head>
-<body data-lang="zh" class="product-body--one-screen">
+<body data-lang="zh">
   <div class="lang-switcher">
     <button type="button" class="lang-switcher-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
       <span class="lang-switcher-current">中文</span>
@@ -23,7 +24,7 @@
       <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
     </ul>
   </div>
-  <article class="product-page product-page--showcase product-page--one-screen">
+  <article class="product-page product-page--showcase">
     <a href="../index.html" class="back-link" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
     <header class="product-header">
       <h1 data-zh="One JLL 项目案例库" data-en="One JLL Case Library">One JLL 项目案例库</h1>
@@ -35,8 +36,8 @@
       </div>
     </header>
 
-    <div class="product-showcase-stacked">
-      <div class="product-story product-story--row">
+    <div class="product-case-layout">
+      <div class="product-story product-story--row product-story--row-comfortable">
         <section class="product-story-block">
           <p class="product-story-label">Why</p>
           <h2 class="product-story-lead zh-only">公司积累了很多项目案例，但投标或对标时，往往只有表格里一行摘要，找不到完整材料和可引用的成果。</h2>
@@ -64,11 +65,11 @@
         </section>
       </div>
 
-      <aside class="product-demo product-demo--bottom" aria-label="Product demo">
+      <aside class="product-case-demo" aria-label="Product demo">
         <div class="product-demo-frame">
           <div class="product-demo-screen product-demo-screen--wide">
             <video
-              src="../assets/jll-case-library.mov"
+              src="../assets/jll-case-library.mp4"
               autoplay
               muted
               playsinline

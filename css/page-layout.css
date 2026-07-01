@@ -79,6 +79,17 @@ body.layout-enabled::after {
   word-break: break-all;
 }
 
+.layout-panel-hint {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #0f766e;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius, 6px);
+  padding: 8px 10px;
+  margin-bottom: 12px;
+}
+
 .layout-panel label {
   display: grid;
   grid-template-columns: 1fr auto;

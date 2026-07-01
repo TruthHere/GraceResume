@@ -1,6 +1,4 @@
 (function () {
-  document.documentElement.dataset.layoutPage = location.pathname;
-
   const STORAGE_KEY = "gracecareer-lang";
   const DEFAULT_LANG = "zh";
   const LABELS = { zh: "中文", en: "EN" };

@@ -145,8 +145,8 @@ body[data-lang="zh"] .en-only {
   font-weight: 600;
 }
 
-/* Sidebar */
-aside {
+/* Sidebar — scoped to resume layout only (product pages also use <aside>) */
+.layout aside {
   background: linear-gradient(180deg, #fafafa 0%, var(--surface) 100%);
   border-right: 1px solid var(--border);
   padding: 2.75rem 1.75rem;
@@ -174,7 +174,7 @@ aside {
   object-position: center top;
 }
 
-aside h1 {
+.layout aside h1 {
   font-family: "Noto Serif SC", "Georgia", serif;
   font-size: 1.55rem;
   font-weight: 600;
@@ -503,7 +503,7 @@ footer {
     box-shadow: none;
   }
 
-  aside {
+  .layout aside {
     position: static;
     height: auto;
     border-right: none;
@@ -535,7 +535,7 @@ footer {
     max-width: none;
   }
 
-  aside {
+  .layout aside {
     position: static;
     height: auto;
     break-inside: avoid;

@@ -144,7 +144,7 @@
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          pagePath: location.pathname,
+          pagePath: normalizePagePath(),
           rootSelector: rootSelector,
           html: serializeRootHtml(root),
         }),
@@ -157,7 +157,9 @@
       if (!res.ok || !data.ok) {
         throw new Error(
           data.error ||
-            "保存失败。请确认使用 npm run dev 启动本地服务器（不是 python -m http.server）。"
+            (res.status === 404
+              ? "保存接口不存在。请在项目目录运行 npm run dev 并重启服务器。"
+              : "保存失败。请确认使用 npm run dev 启动（不是 python -m http.server）。")
         );
       }
 

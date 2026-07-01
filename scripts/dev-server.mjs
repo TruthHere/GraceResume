@@ -42,6 +42,7 @@ function savePage(pagePath, rootSelector, innerHtml) {
     throw new Error("Invalid root selector");
   }
 
+  pagePath = normalizePagePath(pagePath);
   const filePath = resolveFile(pagePath);
   if (!filePath || !filePath.endsWith(".html")) {
     throw new Error("Invalid page path");
@@ -86,6 +87,8 @@ function cssFromOverrides(allOverrides) {
     { key: "paddingTop", prop: "padding-top" },
     { key: "paddingBottom", prop: "padding-bottom" },
     { key: "gap", prop: "gap" },
+    { key: "height", prop: "height", autoAtZero: true },
+    { key: "minHeight", prop: "min-height", autoAtZero: true },
   ];
   const lines = [
     "/* GraceCareer layout overrides — auto-generated, do not edit by hand */",
@@ -99,6 +102,9 @@ function cssFromOverrides(allOverrides) {
         return rules[p.key] != null;
       })
         .map(function (p) {
+          if (p.autoAtZero && rules[p.key] === 0) {
+            return "  " + p.prop + ": auto !important;";
+          }
           return "  " + p.prop + ": " + rules[p.key] + "px !important;";
         })
         .join("\n");
@@ -113,9 +119,16 @@ function cssFromOverrides(allOverrides) {
   return lines.join("\n");
 }
 
+function normalizePagePath(pagePath) {
+  const p = pagePath || "/index.html";
+  if (p === "/") return "/index.html";
+  return p;
+}
+
 function saveLayout(pagePath, pageOverrides) {
   const jsonPath = path.join(ROOT, "data/layout-overrides.json");
   const cssPath = path.join(ROOT, "css/layout-overrides.css");
+  pagePath = normalizePagePath(pagePath);
 
   let all = {};
   if (fs.existsSync(jsonPath)) {
@@ -206,7 +219,11 @@ const server = http.createServer(async (req, res) => {
   }
 
   const ext = path.extname(filePath).toLowerCase();
-  res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
+  const headers = { "Content-Type": MIME[ext] || "application/octet-stream" };
+  if (ext === ".html" || ext === ".css" || ext === ".js") {
+    headers["Cache-Control"] = "no-store";
+  }
+  res.writeHead(200, headers);
   fs.createReadStream(filePath).pipe(res);
 });
 
