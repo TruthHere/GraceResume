@@ -253,6 +253,15 @@ body[data-lang="en"] .product-story-lead {
     0 12px 28px rgba(61, 90, 108, 0.14);
 }
 
+@media (hover: none), (pointer: coarse) {
+  .product-insight-sticker:hover {
+    transform: rotate(2.5deg);
+    box-shadow:
+      2px 3px 0 rgba(61, 90, 108, 0.28),
+      0 8px 22px rgba(61, 90, 108, 0.1);
+  }
+}
+
 .product-insight-sticker::before {
   content: "";
   position: absolute;
@@ -298,11 +307,11 @@ body[data-lang="en"] .product-story-lead {
 
 @media (max-width: 640px) {
   .product-insight-sticker {
-    position: static;
+    position: relative;
     width: auto;
     max-width: 100%;
     margin: 0 0 1.25rem;
-    transform: none;
+    transform: rotate(-1.25deg);
   }
 }
 
