@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../css/fonts-inter.css?v=1" />
   <link rel="stylesheet" href="../css/fonts-noto.css?v=1" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="../css/fonts-noto.css?v=1" /></noscript>
-  <link rel="stylesheet" href="../css/style.css?v=3" />
-  <link rel="stylesheet" href="../css/product.css?v=10" />
+  <link rel="stylesheet" href="../css/style.css?v=4" />
+  <link rel="stylesheet" href="../css/product.css?v=24" />
   <script src="../js/page-path.js?v=1"></script>
   <link rel="stylesheet" href="../css/layout-overrides.css?v=2" />
   <script src="../js/load-dev-tools.js?v=1"></script>
@@ -25,32 +25,37 @@
       <li role="presentation"><button type="button" role="option" data-lang="en" aria-selected="false">EN</button></li>
     </ul>
   </div>
-  <article class="product-page product-page--showcase">
+  <article class="product-page product-page--showcase product-page--with-sticker">
+    <aside class="product-insight-sticker zh-only" aria-label="个人心得">
+      <span class="product-insight-sticker__badge">✨ 个人心得</span>
+      <p class="product-insight-sticker__text">初试 Cursor 的那天让我感受到无比的兴奋——我想象中，当开发成本足够低，非编程背景的普通人也能用 AI 创造出真正贴合自己需求的工具的时代已然到来，仿佛通向迷雾中灯塔的大道突然在眼前清晰可见。</p>
+      <p class="product-insight-sticker__date">2025 年 3 月 15 日</p>
+    </aside>
     <a href="../index.html" class="back-link" data-zh="← 返回简历" data-en="← Back to Resume">← 返回简历</a>
     <header class="product-header">
       <h1 data-zh="成本报告处理工具" data-en="Cost Report Processor">成本报告处理工具</h1>
       <p class="product-tag">Vibe Coding · Cursor · 纯前端 Web 工具</p>
       <div class="product-meta">
         <span>HTML / JavaScript</span>
-        <span data-zh="成本管理" data-en="Cost Control">成本管理</span>
-        <span data-zh="工装项目" data-en="Fit-out Projects">工装项目</span>
+        <span data-zh="标准化" data-en="Standardization">标准化</span>
+        <span data-zh="小试牛刀" data-en="First Build">小试牛刀</span>
       </div>
     </header>
 
     <div class="product-story">
       <section class="product-story-block">
         <p class="product-story-label">Why</p>
-        <h2 class="product-story-lead zh-only">每个项目的成本报告、合同清单 breakdown 各有一套，但公司要汇总成统一数据库——中间那步「翻译」，现在全靠人工。</h2>
+        <h2 class="product-story-lead zh-only">每个项目的成本报告、合同清单各有一套，但公司要汇总成统一数据库——中间那步「翻译」，现在全靠人工。</h2>
         <h2 class="product-story-lead en-only">Every project’s cost report and contract breakdown looks different — yet the firm needs a unified database, and the “translation” step in between still runs on manual work.</h2>
-        <p class="zh-only">在工作中我发现：各项目有自己的成本报告和合同清单 breakdown，条目描述、科目划分、格式都不一致。但公司层面需要把这些数据汇总进统一模板，形成可统计、可对比的成本数据库——也就是说，要把每个项目的清单「翻译」成公司标准 breakdown 下的分类与层级。这个翻译过程过去靠 PM 或 QS 在 Excel 里逐行对照、手工归类，项目一多、条目一多，重复劳动量大，也容易因理解差异导致口径不统一。</p>
+        <p class="zh-only">在工作中我发现：各项目有自己的成本报告和合同清单模板，条目描述、科目划分、格式都不一致。但公司层面需要把这些数据汇总进统一模板，形成可统计、可对比的成本数据库——也就是说，要把每个项目的清单「翻译」成公司标准分类与层级。这个翻译过程过去靠 PM 或 QS 在 Excel 里逐行对照、手工归类，项目一多、条目一多，重复劳动量大，也容易因理解差异导致口径不统一。</p>
         <p class="en-only">On the job, I saw a recurring gap: each project carries its own cost report and contract breakdown — different wording, cost codes, and layouts. At company level, though, teams need to roll those up into a single template and build a comparable cost database. In practice, that means “translating” each project’s schedule into the firm’s standard breakdown. Today that translation is manual — PMs or QS staff line-by-line in Excel — slow at scale, and prone to inconsistent classification when different people apply the rules differently.</p>
       </section>
 
       <section class="product-story-block">
         <p class="product-story-label">What</p>
-        <h2 class="product-story-lead zh-only">把项目清单按映射规则自动「翻译」到公司统一 breakdown，复核后导出可直接入库的格式。</h2>
+        <h2 class="product-story-lead zh-only">把项目清单按映射规则自动「翻译」到公司统一成本类别，复核后导出可直接入库的格式。</h2>
         <h2 class="product-story-lead en-only">Auto-“translate” project line items into the company’s standard breakdown via mapping rules — review, then export in a database-ready format.</h2>
-        <p class="zh-only">这是面向 PM / QS 的浏览器工具：上传某项目的 .xlsx 成本清单，指定「合同内容」「合同金额」等列后，系统按预设的关键词映射规则，将项目条目自动匹配到公司统一模板的大类 / 小类（M / T 结构）。处理后在表格中逐行复核——可预览或编辑映射规则、刷新匹配、手动纠偏；确认无误后，按公司模板要求设置导出格式（加粗、背景色、缩进等），一键下载已「翻译」完成的 Excel，可直接用于汇总入库或进一步统计。</p>
+        <p class="zh-only">这是面向 PM / QS 的浏览器工具：可实现上传某项目的 .xlsx 成本清单，指定「合同内容」「合同金额」等列后，系统按预设的关键词映射规则，将项目条目自动匹配到公司统一模板类别。人工复核确认无误后，按公司模板要求设置导出格式，一键下载已「翻译」完成的 Excel，可直接用于汇总入库或进一步统计。</p>
         <p class="en-only">A browser tool for PMs and QS teams: upload a project’s .xlsx cost list, map columns for contract scope and amounts, then auto-match each line to the company’s standard major/minor categories (M / T structure) via configurable keyword mapping rules. Review row-by-row in the table — preview or edit mappings, refresh matching, override exceptions manually. When ready, apply the firm’s export formatting (bold, fill color, indent) and download a “translated” Excel ready for database roll-up or further analysis.</p>
       </section>
 
@@ -58,9 +63,8 @@
         <p class="product-story-label">How</p>
         <h2 class="product-story-lead zh-only">把工作中手工翻译的流程抽象成映射规则，用 Cursor 做成纯前端自动分类工具。</h2>
         <h2 class="product-story-lead en-only">Abstracted the manual translation workflow into mapping rules — built a pure-frontend auto-classification tool with Cursor.</h2>
-        <p class="zh-only">我先还原真实工作流：项目清单 → 对照公司 breakdown 逐条归类 → 调整格式 → 提交汇总。再把其中可重复的判断逻辑抽成关键词映射规则（「某类描述 → 公司模板某科目」），梳理「上传 → 选列 → 规则匹配 → 复核 → 导出」主路径，用 Cursor 实现页面与处理逻辑。技术选型为纯前端静态页（SheetJS + FileSaver），映射规则可在界面内维护，同一套公司模板可反复用于不同项目的清单翻译，把原先的人工翻译转为规则驱动的自动分类。</p>
+        <p class="zh-only">我先还原真实工作流：项目清单 → 对照公司模板逐条归类 → 调整格式 → 提交汇总。再把其中可重复的判断逻辑抽成关键词映射规则（如弱电、IT、综合布线等多种表述名称通常都指向 IT 相关成本），梳理「上传 → 选列 → 规则匹配 → 复核 → 导出」主路径，用 Cursor 实现页面与处理逻辑。技术选型为纯前端静态页（SheetJS + FileSaver），映射规则可在界面内维护，同一套公司模板可反复用于不同项目的清单翻译，把原先的人工翻译转为规则驱动的自动分类。</p>
         <p class="en-only">I first mapped the real workflow: project schedule → line-by-line mapping to the company breakdown → format → submit for roll-up. Then I extracted the repeatable judgments into keyword mapping rules (“this description → that company code”) and built the main path — upload → map columns → rule matching → review → export — with Cursor. Pure frontend (SheetJS + FileSaver); mapping rules are editable in the UI. One company template can be reused across projects, turning manual translation into rule-driven auto-classification.</p>
-        <p class="product-story-highlight zh-only">代码已存档于 <a class="product-link" href="https://github.com/TruthHere/cost-organizer-web" target="_blank" rel="noopener noreferrer">GitHub</a>。</p>
         <p class="product-story-highlight en-only">Code archived on <a class="product-link" href="https://github.com/TruthHere/cost-organizer-web" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
       </section>
     </div>

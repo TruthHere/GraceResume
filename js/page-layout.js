@@ -35,7 +35,8 @@
     "article.job",
     ".photo-wrap",
     ".tags",
-    ".contact",
+    ".intro-split",
+    ".products-nav",
     ".entry-heading",
   ].join(", ");
 

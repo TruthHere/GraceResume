@@ -1,10 +1,13 @@
 {
   "/index.html": {
-    "html[data-layout-page=\"/index.html\"] .layout > main > section.summary": {
+    "html[data-layout-page=\"/index.html\"] .layout > main > div.intro-split > section.summary": {
       "marginBottom": 32
     },
     "html[data-layout-page=\"/index.html\"] .layout aside > ul.contact": {
       "marginTop": 0
+    },
+    "html[data-layout-page=\"/index.html\"] .layout main > div.intro-split": {
+      "marginBottom": 0
     }
   },
   "/products/cost-organizer.html": {
@@ -33,6 +36,11 @@
     },
     "html[data-layout-page=\"/products/progressviewer.html\"] .product-page header.product-header": {
       "marginBottom": 28
+    }
+  },
+  "/products/project-case-library.html": {
+    "html[data-layout-page=\"/products/project-case-library.html\"] .product-page header.product-header": {
+      "marginBottom": 24
     }
   }
 }

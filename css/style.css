@@ -196,8 +196,8 @@ body[data-lang="zh"] .en-only {
   color: var(--accent);
   font-size: 0.84rem;
   font-weight: 500;
-  margin-bottom: 1.75rem;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 .contact {
@@ -324,6 +324,110 @@ body[data-lang="en"] section h2 {
 
 .summary p:last-child {
   margin-bottom: 0;
+}
+
+/* Profile + Vibe Coding — side by side on desktop */
+.intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 17rem);
+  gap: 2rem 2.25rem;
+  align-items: start;
+  margin-bottom: 2.75rem;
+}
+
+.intro-split > section {
+  margin-bottom: 0;
+}
+
+.intro-split .products-nav {
+  margin-bottom: 0;
+}
+
+.intro-split .products-nav h2 {
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .intro-split {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* Inline text links in body copy — subtle, no browser blue */
+.product-story-highlight a,
+.product-page .product-story-block a {
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.product-story-highlight a:hover,
+.product-page .product-story-block a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Expandable inline links (e.g. research story / full version) */
+.product-link {
+  color: var(--accent);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(61, 90, 108, 0.42);
+  text-underline-offset: 0.16em;
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+.product-link:hover {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+}
+
+/* Vibe Coding works — distinct link row, underline for affordance */
+.products-nav {
+  margin-bottom: 2.75rem;
+}
+
+.products-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.products-nav-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: underline;
+  text-decoration-color: rgba(61, 90, 108, 0.42);
+  text-underline-offset: 0.16em;
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+.products-nav-list a::after {
+  content: "→";
+  font-size: 0.8rem;
+  opacity: 0.65;
+  text-decoration: none;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.products-nav-list a:hover {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+}
+
+.products-nav-list a:hover::after {
+  transform: translateX(3px);
+  opacity: 1;
 }
 
 .job,

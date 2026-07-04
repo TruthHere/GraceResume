@@ -1,11 +1,15 @@
 /* GraceCareer layout overrides — auto-generated, do not edit by hand */
 
-html[data-layout-page="/index.html"] .layout > main > section.summary {
+html[data-layout-page="/index.html"] .layout > main > div.intro-split > section.summary {
   margin-bottom: 32px !important;
 }
 
 html[data-layout-page="/index.html"] .layout aside > ul.contact {
   margin-top: 0px !important;
+}
+
+html[data-layout-page="/index.html"] .layout main > div.intro-split {
+  margin-bottom: 0px !important;
 }
 
 html[data-layout-page="/products/cost-organizer.html"] .product-page div.product-story > section.product-story-block:nth-of-type(1) {
@@ -38,4 +42,8 @@ html[data-layout-page="/products/progressviewer.html"] .product-page {
 
 html[data-layout-page="/products/progressviewer.html"] .product-page header.product-header {
   margin-bottom: 28px !important;
+}
+
+html[data-layout-page="/products/project-case-library.html"] .product-page header.product-header {
+  margin-bottom: 24px !important;
 }
