@@ -2,7 +2,7 @@
   font-family: "Noto Serif SC";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("../assets/fonts/noto-serif-sc.woff2") format("woff2");
 }
 
@@ -10,6 +10,6 @@
   font-family: "Noto Serif SC";
   font-style: normal;
   font-weight: 600;
-  font-display: optional;
+  font-display: swap;
   src: url("../assets/fonts/noto-serif-sc.woff2") format("woff2");
 }

@@ -38,7 +38,7 @@
 }
 
 .research-page-title {
-  font-family: "Noto Serif SC", "Georgia", serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.35rem, 3vw, 1.75rem);
   font-weight: 600;
   color: var(--text);
@@ -819,7 +819,7 @@ body[data-lang="en"] .research-page-title {
 }
 
 .research-wwh h2 {
-  font-family: "Noto Serif SC", "Georgia", serif;
+  font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 0.65rem;

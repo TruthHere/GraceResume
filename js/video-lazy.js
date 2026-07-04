@@ -39,6 +39,9 @@
     var loadPromise = null;
     var prefetched = false;
 
+    video.controls = false;
+    video.removeAttribute("controls");
+
     function showLoading() {
       wrap.classList.add("is-loading");
       wrap.classList.remove("is-error");
@@ -48,12 +51,16 @@
       wrap.classList.remove("is-loading");
       wrap.classList.add("is-playing");
       btn.hidden = true;
+      video.controls = true;
+      video.muted = false;
+      video.volume = 1;
     }
 
     function showError() {
       wrap.classList.remove("is-loading");
       wrap.classList.add("is-error");
       btn.hidden = false;
+      video.controls = false;
     }
 
     function waitForCanPlay() {
@@ -166,6 +173,7 @@
       if (!video.getAttribute("src")) return;
       btn.hidden = false;
       wrap.classList.remove("is-playing");
+      video.controls = false;
     });
   }
 

@@ -28,13 +28,15 @@ encode() {
   local crf="$4"
   echo "→ $output"
   ffmpeg -y -i "$input" \
-    -an \
+    -map 0:v:0 \
+    -map 0:a:0? \
     -c:v libx264 \
     -profile:v main \
     -pix_fmt yuv420p \
     -vf "scale=${scale}:force_original_aspect_ratio=decrease,pad=ceil(iw/2)*2:ceil(ih/2)*2" \
     -crf "$crf" \
     -preset slow \
+    -c:a aac -b:a 96k -ac 2 \
     -movflags +faststart \
     "$output"
 }
