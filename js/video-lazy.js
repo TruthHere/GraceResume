@@ -14,7 +14,7 @@
     var ordered = [];
     var primary = wrap.getAttribute("data-video-src");
     var mobile = wrap.getAttribute("data-video-src-mobile");
-    var useMobile = mobile && window.matchMedia("(max-width: 820px)").matches;
+    var useMobile = mobile && window.matchMedia("(max-width: 640px)").matches;
 
     if (useMobile) ordered.push(mobile);
     if (primary) ordered.push(primary);

@@ -904,7 +904,7 @@ body[data-lang="en"] .research-wwh h2 {
   color: var(--accent);
 }
 
-@media (max-width: 820px) {
+@media (max-width: 640px) {
   .research-page {
     padding: 2rem 1.15rem 2.5rem;
     box-shadow: none;
