@@ -44,6 +44,14 @@ html[data-layout-page="/products/progressviewer.html"] .product-page header.prod
   margin-bottom: 28px !important;
 }
 
+html[data-layout-page="/products/project-case-library.html"] .product-page div.product-case-layout > div.product-story > section.product-story-block:nth-of-type(1) {
+  margin-bottom: 0px !important;
+}
+
+html[data-layout-page="/products/project-case-library.html"] .product-page div.product-case-layout > div.product-story > section.product-story-block:nth-of-type(2) {
+  margin-bottom: 0px !important;
+}
+
 html[data-layout-page="/products/project-case-library.html"] .product-page header.product-header {
   margin-bottom: 24px !important;
 }

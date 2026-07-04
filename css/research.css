@@ -908,10 +908,12 @@ body[data-lang="en"] .research-wwh h2 {
   .research-page {
     padding: 2rem 1.15rem 2.5rem;
     box-shadow: none;
+    width: 100%;
+    max-width: none;
   }
 
   .research-page.research-brief {
-    padding: 3.25rem max(1.15rem, 5.5rem) 2.5rem 1.15rem;
+    padding: 3.25rem 1.15rem 2.5rem;
   }
 
   .research-topbar {

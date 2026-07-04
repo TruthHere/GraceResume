@@ -171,6 +171,7 @@ body[data-lang="en"] .product-section h2 {
   border-radius: var(--radius);
   padding: 1.35rem 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 0;
 }
 
 .product-story-label {
@@ -301,7 +302,7 @@ body[data-lang="en"] .product-story-lead {
     width: auto;
     max-width: 100%;
     margin: 0 0 1.25rem;
-    transform: rotate(-1deg);
+    transform: none;
   }
 }
 
@@ -798,8 +799,9 @@ body[data-lang="en"] .product-story--row .product-story-lead {
 
 @media (max-width: 820px) {
   .product-case-layout .product-story--case-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   .product-case-demo {
@@ -838,7 +840,9 @@ body[data-lang="en"] .product-story--row .product-story-lead {
 
 @media (max-width: 820px) {
   .product-page {
-    padding: 2rem 1.25rem 3rem;
+    padding: 2rem 1.15rem 3rem;
+    width: 100%;
+    max-width: none;
   }
 
   .product-showcase-grid {
