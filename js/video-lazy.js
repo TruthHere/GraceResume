@@ -76,11 +76,22 @@
       video.controls = false;
     }
 
-    function waitForCanPlay() {
+    function waitForCanPlay(timeoutMs) {
       return new Promise(function (resolve, reject) {
         if (video.readyState >= 2) {
           resolve();
           return;
+        }
+
+        var settled = false;
+
+        function finish(ok) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          cleanup();
+          if (ok) resolve();
+          else reject(new Error("video load failed"));
         }
 
         function cleanup() {
@@ -90,19 +101,22 @@
         }
 
         function onCanPlay() {
-          cleanup();
-          resolve();
+          finish(true);
         }
 
         function onLoadedData() {
-          cleanup();
-          resolve();
+          finish(true);
         }
 
         function onError() {
-          cleanup();
-          reject(new Error("video load failed"));
+          finish(false);
         }
+
+        var timer = setTimeout(function () {
+          if (video.readyState >= 2) finish(true);
+          else if (video.readyState >= 1) finish(true);
+          else finish(false);
+        }, timeoutMs || 12000);
 
         video.addEventListener("canplay", onCanPlay, { once: true });
         video.addEventListener("loadeddata", onLoadedData, { once: true });
@@ -131,7 +145,7 @@
 
           var src = candidates[index++];
           setSource(src);
-          waitForCanPlay().then(resolve).catch(tryNext);
+          waitForCanPlay(12000).then(resolve).catch(tryNext);
         }
 
         tryNext();
@@ -152,6 +166,18 @@
       });
     }
 
+    function schedulePrefetch() {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(function () {
+          prefetch();
+        }, { timeout: 800 });
+      } else {
+        setTimeout(prefetch, 120);
+      }
+    }
+
+    schedulePrefetch();
+
     if ("IntersectionObserver" in window) {
       var observer = new IntersectionObserver(
         function (entries) {
@@ -162,11 +188,9 @@
             }
           });
         },
-        { rootMargin: "320px 0px" }
+        { rootMargin: "480px 0px" }
       );
       observer.observe(wrap);
-    } else {
-      prefetch();
     }
 
     btn.addEventListener("click", function () {
