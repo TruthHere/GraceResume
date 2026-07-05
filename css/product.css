@@ -346,6 +346,18 @@ body[data-lang="en"] .product-story-lead {
   background: #e8eef1;
 }
 
+.product-demo-screen.video-lazy {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.product-demo-screen.video-lazy > .video-poster,
+.product-demo-screen.video-lazy > video,
+.product-demo-screen.video-lazy > .video-play-btn {
+  grid-area: 1 / 1;
+}
+
 .video-lazy .video-poster {
   position: relative;
   z-index: 1;
@@ -369,21 +381,22 @@ body[data-lang="en"] .product-story-lead {
   object-fit: contain;
   background: #e8eef1;
   pointer-events: none;
+  align-self: center;
+  justify-self: center;
 }
 
 .video-lazy:not(.is-playing) video {
-  position: absolute;
-  inset: 0;
   opacity: 0;
   visibility: hidden;
+  z-index: 0;
 }
 
 .video-lazy.is-playing video {
-  position: relative;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   background: #0f172a;
+  z-index: 2;
 }
 
 .video-lazy:not(.is-playing) video::-webkit-media-controls {
@@ -399,8 +412,7 @@ body[data-lang="en"] .product-story-lead {
 }
 
 .video-lazy .video-play-btn {
-  position: absolute;
-  inset: 0;
+  place-self: stretch;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -805,23 +817,13 @@ body[data-lang="en"] .product-story--row .product-story-lead {
 .product-case-demo {
   align-self: center;
   flex-shrink: 0;
-  width: fit-content;
-  max-width: 100%;
+  width: 100%;
+  max-width: calc(512px * 16 / 9 + 1.3rem);
   margin-inline: auto;
 }
 
-@media (max-width: 960px) {
-  .product-case-demo {
-    width: 100%;
-  }
-
-  .product-case-demo .product-demo-frame {
-    width: 100%;
-  }
-}
-
 .product-case-demo .product-demo-frame {
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
   margin-inline: auto;
   padding: 0.65rem;
@@ -832,10 +834,8 @@ body[data-lang="en"] .product-story--row .product-story-lead {
 }
 
 .product-case-demo .product-demo-screen--wide {
-  width: calc(512px * 16 / 9);
-  height: auto;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  max-width: 100%;
   border-radius: 12px;
   overflow: hidden;
   background: #e8eef1;
@@ -858,9 +858,7 @@ body[data-lang="en"] .product-story--row .product-story-lead {
 
 @media (max-width: 960px) {
   .product-case-demo .product-demo-screen--wide {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    min-height: 12rem;
   }
 }
 
