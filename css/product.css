@@ -308,9 +308,13 @@ body[data-lang="en"] .product-story-lead {
 @media (max-width: 640px) {
   .product-insight-sticker {
     position: relative;
-    width: auto;
+    top: auto;
+    right: auto;
+    left: auto;
+    z-index: auto;
+    width: min(21rem, 100%);
     max-width: 100%;
-    margin: 0 0 1.25rem;
+    margin: 0 auto 1.25rem;
     transform: rotate(-1.25deg);
   }
 }

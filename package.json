@@ -3,7 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/dev-server.mjs"
+    "dev": "node scripts/dev-server.mjs",
+    "pdf": "node scripts/export-resume-pdf.mjs",
+    "pdf:en": "node scripts/export-resume-pdf.mjs --lang=en --out=assets/grace-he-resume-en.pdf"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.3.0"
   },
   "dependencies": {
     "node-html-parser": "^7.0.1"
