@@ -1,4 +1,7 @@
 (function () {
+  var CDN_REPO = "TruthHere/GraceResume@main";
+  var PLAYBACK_VOLUME = 0.6;
+
   function resolveVideoUrl(src) {
     if (!src || /^https?:\/\//i.test(src)) return src;
     try {
@@ -6,6 +9,13 @@
     } catch (err) {
       return src;
     }
+  }
+
+  function cdnVideoUrl(src) {
+    if (!src || /^https?:\/\//i.test(src)) return null;
+    if (!location.hostname.endsWith("github.io")) return null;
+    var clean = src.replace(/^(\.\.\/)+/, "");
+    return "https://cdn.jsdelivr.net/gh/" + CDN_REPO + "/" + clean;
   }
 
   function sourceCandidates(wrap) {
@@ -19,8 +29,10 @@
 
     var urls = [];
     ordered.forEach(function (src) {
-      var resolved = resolveVideoUrl(src);
-      if (resolved && urls.indexOf(resolved) === -1) urls.push(resolved);
+      var cdn = cdnVideoUrl(src);
+      var origin = resolveVideoUrl(src);
+      if (cdn && urls.indexOf(cdn) === -1) urls.push(cdn);
+      if (origin && urls.indexOf(origin) === -1) urls.push(origin);
     });
     return urls;
   }
@@ -29,16 +41,14 @@
     video.muted = false;
     video.defaultMuted = false;
     video.removeAttribute("muted");
-    video.volume = 1;
+    video.volume = PLAYBACK_VOLUME;
   }
 
   function startPlayback(video) {
-    unlockAudio(video);
-    return video.play().catch(function () {
-      video.muted = true;
-      return video.play().then(function () {
-        unlockAudio(video);
-      });
+    video.muted = true;
+    video.defaultMuted = true;
+    return video.play().then(function () {
+      unlockAudio(video);
     });
   }
 
@@ -66,7 +76,6 @@
       wrap.classList.add("is-playing");
       btn.hidden = true;
       video.controls = true;
-      unlockAudio(video);
     }
 
     function showError() {
@@ -194,7 +203,6 @@
     }
 
     btn.addEventListener("click", function () {
-      unlockAudio(video);
       showLoading();
       loadVideo()
         .then(function () {
