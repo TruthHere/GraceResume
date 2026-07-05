@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
     "pdf": "node scripts/export-resume-pdf.mjs",
-    "pdf:en": "node scripts/export-resume-pdf.mjs --lang=en --out=assets/grace-he-resume-en.pdf"
+    "pdf:en": "node scripts/export-resume-pdf.mjs --lang=en --out=assets/grace-he-resume-en.pdf",
+    "fonts:subset": "node scripts/extract-site-chars.mjs && python3 -m fontTools.subset assets/fonts/noto-serif-sc.woff2 --output-file=assets/fonts/noto-serif-sc-subset.woff2 --text-file=assets/fonts/subset-chars.txt --flavor=woff2 --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap --notdef-glyph --notdef-outline --recommended-glyphs"
   },
   "devDependencies": {
     "puppeteer": "^25.3.0"
