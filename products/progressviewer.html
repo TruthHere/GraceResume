@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta name="theme-color" content="#f5f5f4" >
+  <meta name="color-scheme" content="light" >
   <title>ProgressViewer 现场进度相册 · Grace He</title>
+  <link rel="stylesheet" href="../css/critical.css?v=1" >
+  <link rel="preload" href="../assets/progressviewer-poster.jpg" as="image" >
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin >
   <link rel="preload" href="../assets/fonts/noto-serif-sc.woff2" as="font" type="font/woff2" crossorigin >
   <link rel="stylesheet" href="../css/fonts-inter.css?v=1" >
   <link rel="stylesheet" href="../css/fonts-noto.css?v=3" >
   <link rel="stylesheet" href="../css/style.css?v=12" >
-  <link rel="stylesheet" href="../css/product.css?v=30" >
+  <link rel="stylesheet" href="../css/product.css?v=31" >
   <script src="../js/page-path.js?v=1"></script>
   <link rel="stylesheet" href="../css/layout-overrides.css?v=2" >
   <script src="../js/load-dev-tools.js?v=1"></script>
@@ -86,7 +90,7 @@
       <aside class="product-demo" aria-label="Product demo">
         <div class="product-demo-frame">
           <div class="product-demo-screen video-lazy" data-video-src="../assets/progressviewer-mockup-web.mp4" data-video-src-mobile="../assets/progressviewer-mockup-mobile.mp4">
-            <video playsinline="" webkit-playsinline="" loop="" preload="none" poster="../assets/progressviewer-poster.jpg" aria-label="ProgressViewer product demo"></video>
+            <video playsinline="" webkit-playsinline="" loop="" preload="metadata" poster="../assets/progressviewer-poster.jpg" aria-label="ProgressViewer product demo"></video>
             <button type="button" class="video-play-btn">
               <span class="zh-only">点击播放演示</span>
               <span class="en-only">Tap to play demo</span>

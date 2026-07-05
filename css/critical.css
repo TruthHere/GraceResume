@@ -1,0 +1,20 @@
+/* First-paint shell — linked before other stylesheets (PDF / in-app browser cold opens) */
+html {
+  background: #f5f5f4;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f4;
+  color: #1c1c1c;
+  -webkit-text-size-adjust: 100%;
+}
+
+.product-demo-screen {
+  background: #e8eef1;
+}
+
+.video-lazy:not(.is-playing) video {
+  background: #e8eef1;
+}
